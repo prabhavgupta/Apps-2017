@@ -1,6 +1,7 @@
 # Apps-2017
 These apps are built by college students for IEEEmadC 2017
 
+Contact at IEEEmadC@ieee.org with your team name if you face any issues.
 
 How to contribute Using terminal :
 
