@@ -12,7 +12,7 @@ For submittion kindly include following:
 
 * Follow the example http://ieeemadc.org/app-submission/
 
-# Open Source ? Submit Using via Github :
+# Open Source ? Submit via Github :
 Create a folder with team name including the above mentioned files and DESCRIPTION on REAMDME.MD
 
 ### - First make the repository (Name=RepositoryName) on github.
