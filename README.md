@@ -17,13 +17,4 @@ For submittion kindly include following:
 # Open Source ? Submit via Github :
 Create a folder with team name including the above mentioned files and DESCRIPTION on REAMDME.MD
 
-### - First make the repository (Name=RepositoryName) on github.
-### - Open the terminal and make the new directory (mkdir NewDirectory).
-### - Copy your ProjectFolder to this NewDirectory.
-### - Change the present work directory to NewDirectory.
-### - Run these commands
-#### - git init
-#### - git add ProjectFolderName
-#### - git commit -m "first commit"
-#### - git remote add origin https://github.com/IEEEmadC/Apps-2017.git
-#### - git push -u origin master
+<script src="https://gist.github.com/Chaser324/ce0505fbed06b947d962.js"></script>
