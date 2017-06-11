@@ -17,4 +17,3 @@ For submittion kindly include following:
 # Open Source ? Submit via Github :
 Create a folder with team name including the above mentioned files and DESCRIPTION on REAMDME.MD
 
-<script src="https://gist.github.com/Chaser324/ce0505fbed06b947d962.js"></script>
