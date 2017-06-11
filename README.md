@@ -10,7 +10,7 @@ For submittion kindly include following:
 
 * DESCRIPTION UPTO 4000 CHARACTERS SHOULD INCLUDE PROMO VIDEO 2MIN YOUTUBE/VIMEO EMBED LINK - ONLY TXT AND VIDEO LINK
 
-* Include a Licence
+* UPLOAD CODE AND APP MAX FILE SIZE. Include a Licence.
 
 * Follow the example http://ieeemadc.org/app-submission/
 
