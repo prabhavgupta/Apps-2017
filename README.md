@@ -16,9 +16,9 @@ Please make necessary changes and add the edited lne just below the table....
 -->
 
 
-| App | Team Name | Short Description | Open Source | Country | Author |
+| App | Team Name | Short Description | Licence | Country | Author |
 |--------|--------|--------|--------|--------|--------|
-|  [Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/mierzenieOpenCV-release.apk) | [Carbon-Base](https://github.com/IEEEmadC/Apps-2017/tree/master/Carbon_Base) | Amazing application for real object measuring! | NO | Poland | Jakub Węgielewski 
+|  [Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/mierzenieOpenCV-release.apk) | [Carbon-Base](https://github.com/IEEEmadC/Apps-2017/tree/master/Carbon_Base) | Amazing application for real object measuring! | NA | Poland | Jakub Węgielewski 
 
 Contact at IEEEmadC@ieee.org with your team name if you face any issues.
 
