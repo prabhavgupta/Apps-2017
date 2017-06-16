@@ -10,3 +10,10 @@ What’s more you need something as a benchmark. You can use your ones or some o
 
 Demo:
 [![Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/video.png)](https://vimeo.com/221269208)
+
+Team Name    - Carbon-Base
+Author       - Jakub Węgielewski <jawegielewski@o2.pl>
+University   - University of Technology and Science
+Country      - Poland
+App Category - Utility
+Completed App- June 14, 2017 
