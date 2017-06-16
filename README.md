@@ -15,49 +15,9 @@ For submission kindly include following:
 * Follow the example http://ieeemadc.org/app-submission/
 
 ## Open Source ? Submit via Github :
-Follow the instruction below and submit your app via Github
-- Fork this repository by clicking on the fork button on the top right corner.
-- Create a [new repository](https://github.com/new) on Github with your project's name. Dont forget to check the option `Initialize this repository with a README and LICENCE.
-- Install the [Git Shell](https://git-scm.com/downloads) on your computer.
-- Open the terminal (Command prompt in Windows).
-- Type the following commands:
-```bash
-git clone https://github.com/Your-Github-Username/Your-Project-Name.git
-cd Your-Project-Name
-```
-Don't close the terminal.
 
-- Edit the README.md and add more info about your project. Don't forget to include your:
-  - Team name
-  - Team members name and Github profile link if any.
-- Copy your project files to the folder.
-- Type the following commands:
-```bash
-git add --all .
-git commit -m "added project-name"
-git push
-```
-
-- Type your Github username and password
-- Now your project is uploaded to Github.
-- Type the following commands:
-```bash
-cd ..
-git clone https://github.com/Your-Github-Username/Apps-2017
-cd Apps-2017
-```
-Now you can see a Readme.md file. Open it with your favorite text editor and add your app to the table at the end of the readme. Please follow the syntax mentioned in the readme as comments.
-- Type the following commands:
-```bash
-git add README.md
-git add LICENCE.md
-git commit -m "Added App-name by Team-name"
-git push
-```
-- Type your Github username and password.
-- Now create a [new pull request](https://help.github.com/articles/creating-a-pull-request/)
-
-## Apps Submitted
+## Apps Submission
+Project link is your repository link 
 <!-- DO NOT REMOVE THIS
 
 If you want to add your project to the table, please use the following syntax. Just copy paste the line below and make necessary changes:
