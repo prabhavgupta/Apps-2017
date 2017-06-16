@@ -30,4 +30,4 @@ Please make necessary changes and add the edited lne just below the table....
 
 | Name | Team Name | Short Description | Open Source | Country | Project link | Author |
 |--------|--------|--------|--------|--------|--------|--------|
-| Real Measure | Carbon-Base | Amazing application for real object measuring! | NO | Poland |[Real Measure] (https://github.com/IEEEmadC/Apps-2017/tree/master/Carbon_Base)| Jakub Węgielewski 
+| Real Measure | Carbon-Base | Amazing application for real object measuring! | NO | Poland | [Real Measure](https://github.com/IEEEmadC/Apps-2017/tree/master/Carbon_Base) | Jakub Węgielewski 
