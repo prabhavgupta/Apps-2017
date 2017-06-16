@@ -1,7 +1,6 @@
 Real Measure
 
-[![Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/video.png)](https://vimeo.com/221269208)
-
+![Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/plakat-1-683x1024.png)
 
 Innovative, amazing with simple interface app to measure anything you want!
 
@@ -9,4 +8,5 @@ To make it work you need to have OpenCV Manager installed first. In case of its 
 
 What’s more you need something as a benchmark. You can use your ones or some others predefined.
 
-[![Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/plakat-1-683x1024.png)]
+Demo:
+[![Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/video.png)](https://vimeo.com/221269208)
