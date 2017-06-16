@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="new_measurement">NOWY POMIAR</string>
+    <string name="settings">USTAWIENIA</string>
+    <string name="about">INFO</string>
+    <string name="exit">WYJŚCIE</string>
+
+    <string name="start_calibration">Uruchom kalibrację (1/5)</string>
+    <string name="calibration">Kalibracja (2/5)</string>
+    <string name="ben_detecting">Wykrywanie wzorca (3/5)</string>
+    <string name="image_capture">Przechwycenie obrazu (4/5)</string>
+    <string name="object_measurement">Wymiarowanie obiektu (5/5)</string>
+
+    <string name="recognition_in_progress">TRWA WYKRYWANIE WZORCA...</string>
+    <string name="confirmation">Potwierdzenie</string>
+    <string name="recognition">Czy wykryto poprawnie?</string>
+    <string name="label_ok">TAK</string>
+    <string name="label_no">NIE</string>
+
+    <string name="top">GÓRA</string>
+    <string name="left">LEWO</string>
+    <string name="right">PRAWO</string>
+    <string name="bottom">DÓŁ</string>
+
+    <string name="height_info">"Wysokość[px]: %1$s; Wysokość[%2$s]: %3$s"</string>
+    <string name="width_info">"Szerokość[px]: %1$s; Szerokość[%2$s]: %3$s"</string>
+    <string name="height_makes">"Wysokość stanowi %1$s rozmiaru płyty"</string>
+    <string name="width_makes">"Szerokość stanowi %1$s rozmiaru płyty"</string>
+
+    <string name="capture_image">"Przechwyć obraz"</string>
+    <string name="cd_recognized">"Wykryto CD!"</string>
+
+    <string name="units">"Jednostka"</string>
+    <string name="units_summary">"Wybierz jednostkę, którą chcesz używać"</string>
+    <string name="units_array">"unitsArray"</string>
+    <string name="units_values">"unitsValues"</string>
+
+    <string name="default_benchmark">"Plyta CD"</string>
+    <string name="circle">"Okrąg"</string>
+    <string name="line">"Linia"</string>
+    <string name="find_circle">"Jeśli szukasz okrągłych kształtów"</string>
+    <string name="find_line">"Jeśli kształt może być określony przez linię"</string>
+    <string name="recognition_type">"Typ rozpoznania"</string>
+    <string name="rec_type">"Typ:"</string>
+    <string name="set_benchmark">"Określ wzór"</string>
+    <string name="benchmark">"Wzorzec: "</string>
+    <string name="benchmark_list">"Lista wzorców"</string>
+    <string name="ben_hint_name">"nazwa"</string>
+    <string name="ben_hint_size">"rozmiar [cm]"</string>
+    <string name="add_ben">"Dodaj wzorzec"</string>
+    <string name="stage_one">Etap pierwszy</string>
+    <string name="stage_two">Etap drugi</string>
+    <string name="stage_three">Etap trzeci</string>
+    <string name="stage_four">Etap czwarty</string>
+    <string name="stage_five">Etap piąty</string>
+    <string name="set_rec_first">Określ typ rozpoznania</string>
+    <string name="no_del">Ten wzorzec nie może być usunięty</string>
+    <string name="del">Usunięto wzorzec: </string>
+    <string name="no_add">Określ imię i nazwę!</string>
+    <string name="add">Dodano wzorzec</string>
+    <string name="load_ad">Proszę włączyć Internet. Dziękuję! :)</string>
+
+    <string name="app_name">RealMeasure</string>
+    <string name="app_name2">::: RealMeasure :::</string>
+    <string name="title_activity_info">Info</string>
+    <string name="funkcje_programu">\n\nRealMeasure jest aplikacja, która pozwala na wyznazenie rzeczywistych, przyblizonych wymiarow roznych obiektow (w tym takze wymiarow czlowieka). Wykorzystywany jest do tego celu obraz z kamery oraz punkt odniesienia w postaci płyty CD.\n </string>
+    <string name="info_dodatkowe">\n(1)\nAplikacja została napisana przez Jakuba Węgielewskiego.\n\n(2)\nDo stworzenia programu użyto biblioteki OpenCV.\n</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="dzialanie_programu">\netap 1\nNastepuje uruchomienie programu.\n\netap 2\nNalezy wybrac wartosci dla dwoch kluczowych parametrow (HoughCircles - param1, param2) do wykrycia okregow (ich dobor jest m.in uwarunkowany stopniem oswietlenia pomieszczenia). Z gory narzucona stala odleglosc pomiedzy kamera, a plyta CD pozwala wyznaczyć jej ogniskowa. Dzieki temu istnieje wieksze prawdopodobienstwo poprawnego wykrycia szukanego obiektu.\n\netap 3\nWykrycie plyty CD. W celu uzyskania możliwie najwyższego stopnia wykrywalnosci zewnetrznej krawedzi, zostaly wykonane pomiary zarowno tam, jak rowniez na jej wewnetrznych okregach.</string>
+
+</resources>
