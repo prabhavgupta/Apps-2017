@@ -1,4 +1,4 @@
-Real Measure
+##Real Measure
 
 ![Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/plakat-1-683x1024.png)
 
@@ -11,14 +11,16 @@ What’s more you need something as a benchmark. You can use your ones or some o
 Demo:
 [![Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/video.png)](https://vimeo.com/221269208)
 
-Team Name    - Carbon-Base
+* Team Name    - Carbon-Base
 
-Author       - Jakub Węgielewski <jawegielewski@o2.pl>
+* Open Source  - No
 
-University   - University of Technology and Science
+* Author       - Jakub Węgielewski <jawegielewski@o2.pl>
 
-Country      - Poland
+* University   - University of Technology and Science
 
-App Category - Utility
+* Country      - Poland
 
-Completed App- June 14, 2017 
+* App Category - Utility
+
+* Completed App- June 14, 2017 
