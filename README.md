@@ -50,6 +50,7 @@ Now you can see a Readme.md file. Open it with your favorite text editor and add
 - Type the following commands:
 ```bash
 git add README.md
+git add LICENCE.md
 git commit -m "Added App-name by Team-name"
 git push
 ```
