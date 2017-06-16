@@ -15,9 +15,9 @@ For submission kindly include following:
 * Follow the example http://ieeemadc.org/app-submission/
 
 ## Open Source ? Submit via Github :
-
-## Apps Submission
-Project link is your repository link 
+[Open an issue](https://github.com/IEEEmadC/Apps-2017/issues/new) 
+   * Share team name and repository link 
+## Apps Submitted 
 <!-- DO NOT REMOVE THIS
 
 If you want to add your project to the table, please use the following syntax. Just copy paste the line below and make necessary changes:
