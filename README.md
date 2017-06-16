@@ -17,7 +17,7 @@ For submission kindly include following:
 ## Open Source ? Submit via Github :
 Follow the instruction below and submit your app via Github
 - Fork this repository by clicking on the fork button on the top right corner.
-- Create a [new repository](https://github.com/new) on Github with your project's name. Dont forget to check the option `Initialize this repository with a README`.
+- Create a [new repository](https://github.com/new) on Github with your project's name. Dont forget to check the option `Initialize this repository with a README and LICENCE.
 - Install the [Git Shell](https://git-scm.com/downloads) on your computer.
 - Open the terminal (Command prompt in Windows).
 - Type the following commands:
