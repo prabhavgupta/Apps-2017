@@ -31,6 +31,6 @@ For submission kindly include following in the repository:
 
 * DESCRIPTION UPTO 4000 CHARACTERS SHOULD INCLUDE PROMO VIDEO 2MIN YOUTUBE/VIMEO EMBED LINK - ONLY TXT AND VIDEO LINK
 
-* UPLOAD CODE AND APP. Include a Licence.
+* UPLOAD CODE AND APP. [Include a Licence.](https://choosealicense.com/)
 
 * Follow the example http://ieeemadc.org/app-submission/
