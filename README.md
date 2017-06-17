@@ -3,7 +3,7 @@ These apps are built by students for IEEEmadC 2017 submission http://ieeemadc.or
 
 ## Submit via Github :
 [Open an issue](https://github.com/IEEEmadC/Apps-2017/issues/new) 
-   * Share team name and repository link 
+   * Share team name and your repository link 
 
 ## Apps Submitted 
 <!-- DO NOT REMOVE THIS
