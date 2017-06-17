@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="About app" />
+        <item
+            android:id="@+id/nav_instruction"
+            android:icon="@drawable/setting_icon"
+            android:title="Instruction" />
+        <item
+            android:id="@+id/nav_topuniversities"
+            android:autoLink="email"
+            android:icon="@drawable/about"
+            android:title="Top universities" />
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/exit_icon"
+            android:title="Exit" />
+    </group>
+</menu>

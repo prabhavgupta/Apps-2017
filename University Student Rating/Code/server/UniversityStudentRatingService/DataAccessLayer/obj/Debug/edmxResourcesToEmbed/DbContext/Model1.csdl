@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="USR_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Discriminator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserProfileId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="UserProfile" Relationship="Self.FK_AspNetUsers_UserProfile" FromRole="AspNetUsers" ToRole="UserProfile" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_UserProfile_AspNetUsers" FromRole="AspNetUsers" ToRole="UserProfile" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_City_Country" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="Universities" Relationship="Self.FK_University_City" FromRole="City" ToRole="University" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_User_City" FromRole="City" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK_City_Country" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Universities" Relationship="Self.FK_University_Country" FromRole="Country" ToRole="University" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_User_Country" FromRole="Country" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Course" FromRole="Course" ToRole="Rating" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_User_Course" FromRole="Course" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Discipline">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ProfessorDisciplines" Relationship="Self.FK_ProfessorDiscipline_Discipline" FromRole="Discipline" ToRole="ProfessorDiscipline" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Discipline" FromRole="Discipline" ToRole="Rating" />
+    <NavigationProperty Name="RatingSystems" Relationship="Self.FK_RatingSystem_Discipline" FromRole="Discipline" ToRole="RatingSystem" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="University" Relationship="Self.FK_Faculty_University" FromRole="Faculty" ToRole="University" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_User_Faculty" FromRole="Faculty" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="GenderType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_User_GenderType" FromRole="GenderType" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsRemovedBySender" Type="Boolean" Nullable="false" />
+    <Property Name="IsRemovedByReceiver" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="UserMessages" Relationship="Self.FK_UserMessage_Message" FromRole="Message" ToRole="UserMessage" />
+  </EntityType>
+  <EntityType Name="ProfessorDiscipline">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfessorId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Discipline" Relationship="Self.FK_ProfessorDiscipline_Discipline" FromRole="ProfessorDiscipline" ToRole="Discipline" />
+    <NavigationProperty Name="UserProfile" Relationship="Self.FK_ProfessorDiscipline_User" FromRole="ProfessorDiscipline" ToRole="UserProfile" />
+    <NavigationProperty Name="StudentProfessorDisciplines" Relationship="Self.FK_StudentProfessorDiscipline_ProfessorDiscipline" FromRole="ProfessorDiscipline" ToRole="StudentProfessorDiscipline" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Points" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <Property Name="RatingTypeId" Type="Int32" Nullable="false" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="ProfessorId" Type="Int32" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_Rating_Course" FromRole="Rating" ToRole="Course" />
+    <NavigationProperty Name="Discipline" Relationship="Self.FK_Rating_Discipline" FromRole="Rating" ToRole="Discipline" />
+    <NavigationProperty Name="RatingType" Relationship="Self.FK_Rating_RatingType" FromRole="Rating" ToRole="RatingType" />
+    <NavigationProperty Name="UserProfile" Relationship="Self.FK_Rating_User" FromRole="Rating" ToRole="UserProfile" />
+    <NavigationProperty Name="UserProfile1" Relationship="Self.FK_Rating_User1" FromRole="Rating" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="RatingSystem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PointName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MinPoints" Type="Int32" Nullable="false" />
+    <Property Name="MaxPoints" Type="Int32" Nullable="false" />
+    <Property Name="RatingTypeId" Type="Int32" Nullable="false" />
+    <Property Name="DisciplineId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Discipline" Relationship="Self.FK_RatingSystem_Discipline" FromRole="RatingSystem" ToRole="Discipline" />
+    <NavigationProperty Name="RatingType" Relationship="Self.FK_RatingSystem_RatingType" FromRole="RatingSystem" ToRole="RatingType" />
+    <NavigationProperty Name="University" Relationship="Self.FK_RatingSystem_University" FromRole="RatingSystem" ToRole="University" />
+  </EntityType>
+  <EntityType Name="RatingType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_RatingType" FromRole="RatingType" ToRole="Rating" />
+    <NavigationProperty Name="RatingSystems" Relationship="Self.FK_RatingSystem_RatingType" FromRole="RatingType" ToRole="RatingSystem" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_User_Role" FromRole="Status" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="StudentProfessorDiscipline">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int32" Nullable="false" />
+    <Property Name="ProfessorDisciplineId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ProfessorDiscipline" Relationship="Self.FK_StudentProfessorDiscipline_ProfessorDiscipline" FromRole="StudentProfessorDiscipline" ToRole="ProfessorDiscipline" />
+    <NavigationProperty Name="UserProfile" Relationship="Self.FK_StudentProfessorDiscipline_User" FromRole="StudentProfessorDiscipline" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_University_City" FromRole="University" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_University_Country" FromRole="University" ToRole="Country" />
+    <NavigationProperty Name="Faculties" Relationship="Self.FK_Faculty_University" FromRole="University" ToRole="Faculty" />
+    <NavigationProperty Name="RatingSystems" Relationship="Self.FK_RatingSystem_University" FromRole="University" ToRole="RatingSystem" />
+    <NavigationProperty Name="UserProfiles" Relationship="Self.FK_User_University" FromRole="University" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="UserMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageId" Type="Int32" Nullable="false" />
+    <Property Name="SenderId" Type="Int32" />
+    <Property Name="ReceiverId" Type="Int32" />
+    <NavigationProperty Name="Message" Relationship="Self.FK_UserMessage_Message" FromRole="UserMessage" ToRole="Message" />
+    <NavigationProperty Name="UserProfile" Relationship="Self.FK_UserMessage_User" FromRole="UserMessage" ToRole="UserProfile" />
+    <NavigationProperty Name="UserProfile1" Relationship="Self.FK_UserMessage_User1" FromRole="UserMessage" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FacultyId" Type="Int32" />
+    <Property Name="CourseId" Type="Int32" />
+    <Property Name="GenderTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="AspNetUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUsers_UserProfile" FromRole="UserProfile" ToRole="AspNetUsers" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_UserProfile_AspNetUsers" FromRole="UserProfile" ToRole="AspNetUsers" />
+    <NavigationProperty Name="City" Relationship="Self.FK_User_City" FromRole="UserProfile" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_User_Country" FromRole="UserProfile" ToRole="Country" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_User_Course" FromRole="UserProfile" ToRole="Course" />
+    <NavigationProperty Name="Faculty" Relationship="Self.FK_User_Faculty" FromRole="UserProfile" ToRole="Faculty" />
+    <NavigationProperty Name="GenderType" Relationship="Self.FK_User_GenderType" FromRole="UserProfile" ToRole="GenderType" />
+    <NavigationProperty Name="ProfessorDisciplines" Relationship="Self.FK_ProfessorDiscipline_User" FromRole="UserProfile" ToRole="ProfessorDiscipline" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_User" FromRole="UserProfile" ToRole="Rating" />
+    <NavigationProperty Name="Ratings1" Relationship="Self.FK_Rating_User1" FromRole="UserProfile" ToRole="Rating" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_User_Role" FromRole="UserProfile" ToRole="Status" />
+    <NavigationProperty Name="StudentProfessorDisciplines" Relationship="Self.FK_StudentProfessorDiscipline_User" FromRole="UserProfile" ToRole="StudentProfessorDiscipline" />
+    <NavigationProperty Name="University" Relationship="Self.FK_User_University" FromRole="UserProfile" ToRole="University" />
+    <NavigationProperty Name="UserMessages" Relationship="Self.FK_UserMessage_User" FromRole="UserProfile" ToRole="UserMessage" />
+    <NavigationProperty Name="UserMessages1" Relationship="Self.FK_UserMessage_User1" FromRole="UserProfile" ToRole="UserMessage" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUsers_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUsers">
+        <PropertyRef Name="UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="AspNetUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_University_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="University" Type="Self.University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_University_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="University" Type="Self.University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfessorDiscipline_Discipline">
+    <End Role="Discipline" Type="Self.Discipline" Multiplicity="1" />
+    <End Role="ProfessorDiscipline" Type="Self.ProfessorDiscipline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discipline">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProfessorDiscipline">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Discipline">
+    <End Role="Discipline" Type="Self.Discipline" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discipline">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RatingSystem_Discipline">
+    <End Role="Discipline" Type="Self.Discipline" Multiplicity="1" />
+    <End Role="RatingSystem" Type="Self.RatingSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discipline">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RatingSystem">
+        <PropertyRef Name="DisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Faculty_University">
+    <End Role="University" Type="Self.University" Multiplicity="1" />
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Faculty">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Faculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="FacultyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_GenderType">
+    <End Role="GenderType" Type="Self.GenderType" Multiplicity="1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenderType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="GenderTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMessage_Message">
+    <End Role="Message" Type="Self.Message" Multiplicity="1" />
+    <End Role="UserMessage" Type="Self.UserMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserMessage">
+        <PropertyRef Name="MessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfessorDiscipline_User">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="ProfessorDiscipline" Type="Self.ProfessorDiscipline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProfessorDiscipline">
+        <PropertyRef Name="ProfessorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentProfessorDiscipline_ProfessorDiscipline">
+    <End Role="ProfessorDiscipline" Type="Self.ProfessorDiscipline" Multiplicity="1" />
+    <End Role="StudentProfessorDiscipline" Type="Self.StudentProfessorDiscipline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfessorDiscipline">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentProfessorDiscipline">
+        <PropertyRef Name="ProfessorDisciplineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_RatingType">
+    <End Role="RatingType" Type="Self.RatingType" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RatingType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="RatingTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_User">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_User1">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="ProfessorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RatingSystem_RatingType">
+    <End Role="RatingType" Type="Self.RatingType" Multiplicity="1" />
+    <End Role="RatingSystem" Type="Self.RatingSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RatingType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RatingSystem">
+        <PropertyRef Name="RatingTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RatingSystem_University">
+    <End Role="University" Type="Self.University" Multiplicity="1" />
+    <End Role="RatingSystem" Type="Self.RatingSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RatingSystem">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentProfessorDiscipline_User">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="StudentProfessorDiscipline" Type="Self.StudentProfessorDiscipline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentProfessorDiscipline">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_University">
+    <End Role="University" Type="Self.University" Multiplicity="1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMessage_User">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="UserMessage" Type="Self.UserMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserMessage">
+        <PropertyRef Name="ReceiverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMessage_User1">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="UserMessage" Type="Self.UserMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserMessage">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="USR_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="Disciplines" EntityType="Self.Discipline" />
+    <EntitySet Name="Faculties" EntityType="Self.Faculty" />
+    <EntitySet Name="GenderTypes" EntityType="Self.GenderType" />
+    <EntitySet Name="Messages" EntityType="Self.Message" />
+    <EntitySet Name="ProfessorDisciplines" EntityType="Self.ProfessorDiscipline" />
+    <EntitySet Name="Ratings" EntityType="Self.Rating" />
+    <EntitySet Name="RatingSystems" EntityType="Self.RatingSystem" />
+    <EntitySet Name="RatingTypes" EntityType="Self.RatingType" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="StudentProfessorDisciplines" EntityType="Self.StudentProfessorDiscipline" />
+    <EntitySet Name="Universities" EntityType="Self.University" />
+    <EntitySet Name="UserMessages" EntityType="Self.UserMessage" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUsers_UserProfile" Association="Self.FK_AspNetUsers_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_AspNetUsers" Association="Self.FK_UserProfile_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_University_City" Association="Self.FK_University_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="University" EntitySet="Universities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_City" Association="Self.FK_User_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_University_Country" Association="Self.FK_University_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="University" EntitySet="Universities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Country" Association="Self.FK_User_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Course" Association="Self.FK_Rating_Course">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Course" Association="Self.FK_User_Course">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfessorDiscipline_Discipline" Association="Self.FK_ProfessorDiscipline_Discipline">
+      <End Role="Discipline" EntitySet="Disciplines" />
+      <End Role="ProfessorDiscipline" EntitySet="ProfessorDisciplines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Discipline" Association="Self.FK_Rating_Discipline">
+      <End Role="Discipline" EntitySet="Disciplines" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RatingSystem_Discipline" Association="Self.FK_RatingSystem_Discipline">
+      <End Role="Discipline" EntitySet="Disciplines" />
+      <End Role="RatingSystem" EntitySet="RatingSystems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Faculty_University" Association="Self.FK_Faculty_University">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="Faculty" EntitySet="Faculties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Faculty" Association="Self.FK_User_Faculty">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_GenderType" Association="Self.FK_User_GenderType">
+      <End Role="GenderType" EntitySet="GenderTypes" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMessage_Message" Association="Self.FK_UserMessage_Message">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="UserMessage" EntitySet="UserMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfessorDiscipline_User" Association="Self.FK_ProfessorDiscipline_User">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="ProfessorDiscipline" EntitySet="ProfessorDisciplines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentProfessorDiscipline_ProfessorDiscipline" Association="Self.FK_StudentProfessorDiscipline_ProfessorDiscipline">
+      <End Role="ProfessorDiscipline" EntitySet="ProfessorDisciplines" />
+      <End Role="StudentProfessorDiscipline" EntitySet="StudentProfessorDisciplines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_RatingType" Association="Self.FK_Rating_RatingType">
+      <End Role="RatingType" EntitySet="RatingTypes" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_User" Association="Self.FK_Rating_User">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_User1" Association="Self.FK_Rating_User1">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RatingSystem_RatingType" Association="Self.FK_RatingSystem_RatingType">
+      <End Role="RatingType" EntitySet="RatingTypes" />
+      <End Role="RatingSystem" EntitySet="RatingSystems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RatingSystem_University" Association="Self.FK_RatingSystem_University">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="RatingSystem" EntitySet="RatingSystems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentProfessorDiscipline_User" Association="Self.FK_StudentProfessorDiscipline_User">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="StudentProfessorDiscipline" EntitySet="StudentProfessorDisciplines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_University" Association="Self.FK_User_University">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMessage_User" Association="Self.FK_UserMessage_User">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="UserMessage" EntitySet="UserMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMessage_User1" Association="Self.FK_UserMessage_User1">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="UserMessage" EntitySet="UserMessages" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

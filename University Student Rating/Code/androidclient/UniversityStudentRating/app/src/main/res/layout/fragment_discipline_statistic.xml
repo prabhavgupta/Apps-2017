@@ -1,0 +1,382 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGray2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.arturrinkis.universitystudentrating.RatingDisciplineFragment">
+
+    <LinearLayout
+        android:id="@+id/content_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/lightGray2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/top_bottom_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="CLASSWORK RATING"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/ratingBarHeader_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="3.5"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="@dimen/rating_header_size" />
+            <RatingBar
+                android:id="@+id/ratingBar_indicator"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/rating_stars_marginTop"
+                android:numStars="5"
+                android:progressTint="@color/lightOrange"
+                android:rating="2"
+                android:scaleX="@dimen/rating_stars_scale"
+                android:scaleY="@dimen/rating_stars_scale"
+                android:secondaryProgressTint="@color/lightBlue"
+                android:stepSize="1" />
+            <TextView
+                android:id="@+id/ratingBarTotal_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/rating_total_marginTop"
+                android:adjustViewBounds="true"
+                android:text="366 total"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="@dimen/rating_total_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/top_bottom_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="OVERALL RATING"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/overall_rating_piechart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/top_bottom_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="OLYMPIADS ACHIEVEMENTS"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:id="@+id/olympiads_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/olympiads_table_margin_left_right"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="@dimen/olympiads_table_margin_left_right"
+                android:stretchColumns="1"
+                android:shrinkColumns="1">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    
+                    android:background="@drawable/light_blue_round_back">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.20"
+                        android:layout_height="match_parent"
+                        android:text="Points"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textSize="@dimen/prof_disc_prof_name_text_size"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.50"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="@dimen/prof_disc_prof_name_text_size"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textStyle="bold"
+                        android:text="Description" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.30"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="@dimen/prof_disc_prof_name_text_size"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textStyle="bold"
+                        android:text="Date" />
+
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/top_bottom_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="AVERAGE CLASSWORK RATING BY MONTHES"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/average_rating_linechart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/top_bottom_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="AVERAGE CLASSWORK TOP RATING"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView
+                android:id="@+id/average_classwork_top_rating_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+            </com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/average_classwork_top_rating_piechart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="BY MONTHES"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/average_top_rating_linechart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center" />
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/average_top_rating_radarchart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/top_bottom_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="OVERALL TOP RATING"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView
+                android:id="@+id/overall_top_rating_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+            </com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/overall_top_rating_piechart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="BY MONTHES"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/overall_top_rating_linechart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center" />
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/overall_top_rating_radarchart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/top_bottom_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="OLYMPIADS TOP RATING"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView
+                android:id="@+id/olympiads_top_rating_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+            </com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/olympiads_top_rating_piechart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="BY MONTHES"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/olympiads_top_rating_linechart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center" />
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/olympiads_top_rating_radarchart"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

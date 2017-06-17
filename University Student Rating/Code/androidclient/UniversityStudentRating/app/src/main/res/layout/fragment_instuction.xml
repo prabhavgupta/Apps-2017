@@ -1,0 +1,175 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGray2"
+    tools:context="com.example.arturrinkis.universitystudentrating.InstuctionFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/content_layout"
+        android:background="@color/lightGray2">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Description of the main screen"
+        android:textSize="@dimen/main_header_tv_textsize"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="@dimen/main_header_tv_padding"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Immediately after the application is launched, the main application screen is displayed with the possibility of selecting a further action: Login by login password, registration, guest login, exit the application."
+        android:textSize="@dimen/profile_info_tv_size"
+        android:textColor="@color/black"
+        android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Registration"
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register a new user. To register a new user, you must enter the necessary data, and then press the REGISTER button. If the data is entered correctly, the profile screen will be displayed. Otherwise, an error message will be displayed at the top of the screen for registration."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. The entrance."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To enter the user, enter the login / password of the registered user. After logging in, the user profile screen will be displayed."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. Profile description for the student."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="In the profile of the student you can see basic data about the student and a list of selected teachers who have the right to evaluate him."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. Description of statistics."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To view user statistics, click on the 2nd tab on the screen. Next, you must select the direction for the item and then select the item itself. The statistics are represented by various tables and graphs, the data of which are intuitively clear."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6. Description of competitors."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To view the list of competitors, click on the 3rd tab on the screen. A filter will be displayed on which the competitors are searched. After clicking on the SEARCH button, a list of competitors will be displayed."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7. Description of the search."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The search is identical to viewing the list of competitors, except that the competition is viewed relative to the current authorized user, and the search is relative to all users."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8. Description of the entrance of the guest."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log in as a guest allows you to use only search users with viewing their profiles."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9. Description of the profile fragment for the teacher."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="In the profile of the teacher you can see the basic data about the teacher and a list of selected subjects that he teaches."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10. Description of the teacher's rating review / rating."
+            android:textSize="@dimen/main_header_tv_textsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/main_header_tv_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To view and rank the students, click on the 2nd tab. There are opportunities: viewing posted ratings, deleting estimates, setting a student's score. To establish an assessment, you must select the appropriate student who is trained by an authorized teacher."
+            android:textSize="@dimen/profile_info_tv_size"
+            android:textColor="@color/black"
+            android:padding="@dimen/main_header_tv_padding"
+            android:layout_marginBottom="50dp"/>
+</LinearLayout>
+</FrameLayout>

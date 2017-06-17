@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1"
+    android:padding="20dp"
+    android:orientation="horizontal">
+    <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageView
+        android:id="@+id/ivImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.20"
+        android:src="@drawable/ic_menu_share">
+    </com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageView>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.80"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/branch_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Scientific"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </TextView>
+        <TextView
+            android:id="@+id/branch_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            android:text="dsfsdfsfsdfsghfghfhfhfhfghgfhfgfsdfsdfsfs">
+        </TextView>
+    </LinearLayout>
+</LinearLayout>

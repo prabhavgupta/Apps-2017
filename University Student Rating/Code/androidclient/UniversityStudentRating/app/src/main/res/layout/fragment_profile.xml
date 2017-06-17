@@ -1,0 +1,1025 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/lightGray2"
+    tools:context="com.example.arturrinkis.universitystudentrating.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:fillViewport="true"
+        android:background="@color/lightGray2">
+
+    <LinearLayout
+        android:id="@+id/content_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_pattern_back"
+            android:orientation="vertical"
+            android:padding="@dimen/profile_layout_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageView
+                    android:id="@+id/userphoto_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.40"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/profile_default_photo"
+                    android:scaleType="fitCenter" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.60"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ratingBarHeader_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:adjustViewBounds="true"
+                        android:includeFontPadding="false"
+                        android:text="3.5"
+                        android:textAlignment="center"
+                        android:textColor="@color/lightBlue"
+                        android:textSize="@dimen/rating_header_size" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar_indicator"
+                        style="?android:attr/ratingBarStyleIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/rating_stars_marginTop"
+                        android:numStars="5"
+                        android:progressTint="@color/lightOrange"
+                        android:rating="2"
+                        android:scaleX="@dimen/rating_stars_scale"
+                        android:scaleY="@dimen/rating_stars_scale"
+                        android:secondaryProgressTint="@color/lightBlue"
+                        android:stepSize="1" />
+
+                    <TextView
+                        android:id="@+id/ratingBarTotal_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/rating_total_marginTop"
+                        android:adjustViewBounds="true"
+                        android:text="366 total"
+                        android:textAlignment="center"
+                        android:textColor="@color/lightOrange"
+                        android:textSize="@dimen/rating_total_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/rating_bottompadding"
+                android:paddingTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Total olympiads rating"
+                    android:textAlignment="center"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="@dimen/scientific_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/progressbar_marginBottom"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                        android:id="@+id/total_olympiads_rating_pb"
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.70"
+                        app:rcBackgroundColor="@color/lightOrange"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="1000"
+                        app:rcProgress="122"
+                        app:rcProgressColor="@color/lightBlue"
+                        app:rcRadius="5dp"
+                        app:rcReverse="false" />
+
+                    <TextView
+                        android:id="@+id/total_olympiads_rating_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.30"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="122/1000"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/lightOrange"
+                        android:textSize="@dimen/scientific_size" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Total scientific rating"
+                    android:textAlignment="center"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="@dimen/scientific_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/progressbar_marginBottom"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                        android:id="@+id/total_science_rating_pb"
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.70"
+                        app:rcBackgroundColor="@color/lightOrange"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="300"
+                        app:rcProgress="250"
+                        app:rcProgressColor="@color/lightBlue"
+                        app:rcRadius="5dp"
+                        app:rcReverse="false" />
+
+                    <TextView
+                        android:id="@+id/total_science_rating_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.30"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="250/300"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/lightOrange"
+                        android:textSize="@dimen/scientific_size" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Total sport rating"
+                    android:textAlignment="center"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="@dimen/scientific_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/progressbar_marginBottom"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                        android:id="@+id/total_sport_rating_pb"
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.70"
+                        app:rcBackgroundColor="@color/lightOrange"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="300"
+                        app:rcProgress="250"
+                        app:rcProgressColor="@color/lightBlue"
+                        app:rcRadius="5dp"
+                        app:rcReverse="false" />
+
+                    <TextView
+                        android:id="@+id/total_sport_rating_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.30"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="250/300"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/lightOrange"
+                        android:textSize="@dimen/scientific_size" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Total art rating"
+                    android:textAlignment="center"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="@dimen/scientific_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/progressbar_marginBottom"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                        android:id="@+id/total_art_rating_pb"
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.70"
+                        app:rcBackgroundColor="@color/lightOrange"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="300"
+                        app:rcProgress="250"
+                        app:rcProgressColor="@color/lightBlue"
+                        app:rcRadius="5dp"
+                        app:rcReverse="false" />
+
+                    <TextView
+                        android:id="@+id/total_art_rating_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.30"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="250/300"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/lightOrange"
+                        android:textSize="@dimen/scientific_size" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Total society rating"
+                    android:textAlignment="center"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="@dimen/scientific_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/progressbar_marginBottom"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                        android:id="@+id/total_society_rating_pb"
+                        android:layout_width="0dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.70"
+                        app:rcBackgroundColor="@color/lightOrange"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="300"
+                        app:rcProgress="250"
+                        app:rcProgressColor="@color/lightBlue"
+                        app:rcRadius="5dp"
+                        app:rcReverse="false" />
+
+                    <TextView
+                        android:id="@+id/total_society_rating_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.30"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="250/300"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/lightOrange"
+                        android:textSize="@dimen/scientific_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightGray2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_username_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Status"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_status_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gender"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_gender_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Email"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_email_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Firstname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_firstname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sutname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_surname_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Country"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_country_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="City"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_city_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="University"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_university_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textStart"
+                        android:text="Faculty"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_faculty_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textEnd"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/profile_info_margin"
+                android:orientation="horizontal">
+
+                <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                    android:layout_width="@dimen/profile_info_edit_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/notedit_icon" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/space_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Course"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+
+                    <TextView
+                        android:id="@+id/profile_course_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/profile_info_tv_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/selecting_proffesors_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_round_back"
+                android:layout_margin="@dimen/prof_disc_padding"
+                android:padding="@dimen/prof_disc_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select your professors"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/profile_info_tv_size" />
+
+                <LinearLayout
+                    android:id="@+id/scientific_professors_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    android:background="@drawable/space_padding2">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:background="@color/lightGray2"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/lightGray2"
+                            android:padding="@dimen/profile_info_margin"
+                            android:weightSum="1"
+                            android:orientation="horizontal">
+
+                            <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                                android:layout_width="@dimen/profile_info_edit_width"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:background="@drawable/scientific_icon" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.9"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Scientific professors"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/profile_info_tv_size" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView
+                            android:visibility="gone"
+                            android:id="@+id/scientific_professors_lv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+                        </com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/sport_professors_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="1dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="1dp"
+                    android:background="@drawable/space_padding2">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:background="@color/lightGray2"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/lightGray2"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/profile_info_margin"
+                            android:weightSum="1">
+
+                            <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                                android:layout_width="@dimen/profile_info_edit_width"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:background="@drawable/sport_icon" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.9"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sport professors"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/profile_info_tv_size" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView
+                            android:visibility="gone"
+                            android:id="@+id/sport_professors_lv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+                        </com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/art_professors_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="1dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="1dp"
+                    android:background="@drawable/space_padding2">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:background="@color/lightGray2"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/lightGray2"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/profile_info_margin"
+                            android:weightSum="1">
+
+                            <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                                android:layout_width="@dimen/profile_info_edit_width"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:background="@drawable/art_icon" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.9"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Art professors"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/profile_info_tv_size" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView
+                            android:visibility="gone"
+                            android:id="@+id/art_professors_lv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+                        </com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/society_professors_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="1dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="1dp"
+                    android:background="@drawable/space_padding2">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:background="@color/lightGray2"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/lightGray2"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/profile_info_margin"
+                            android:weightSum="1">
+
+                            <com.example.arturrinkis.universitystudentrating.CustomControls.SquareImageButton
+                                android:layout_width="@dimen/profile_info_edit_width"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:background="@drawable/society_icon" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.9"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Society professors"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/profile_info_tv_size" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView
+                            android:visibility="gone"
+                            android:id="@+id/society_professors_lv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+                        </com.example.arturrinkis.universitystudentrating.CustomControls.NonScrollListView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/save_professors_btn"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/lightBlue"
+                    android:textColor="@color/white"
+                    android:text="SAVE">
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

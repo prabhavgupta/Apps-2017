@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGray2"
+    android:id="@+id/professor_rating"
+    tools:context="com.example.arturrinkis.universitystudentrating.ProfessorRatingFragment" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
+        android:background="@color/lightGray2"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:background="@color/lightGray2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:includeFontPadding="false"
+                android:text="RATINGS"
+                android:textAlignment="center"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:id="@+id/rating_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:stretchColumns="1"
+                android:shrinkColumns="1">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1"
+                    android:background="@drawable/light_blue_round_back">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:layout_height="match_parent"
+                        android:text="№"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textSize="@dimen/olympiads_table_text_size"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.15"
+                        android:layout_height="match_parent"
+                        android:text="Date"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textSize="@dimen/olympiads_table_text_size"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        android:text="Student"
+                        android:gravity="center"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textSize="@dimen/olympiads_table_text_size"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.35"
+                        android:layout_height="match_parent"
+                        android:text="Description"
+                        android:gravity="center"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textSize="@dimen/olympiads_table_text_size"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.15"
+                        android:layout_height="match_parent"
+                        android:text="Points"
+                        android:gravity="center"
+                        android:padding="@dimen/olympiads_table_padding"
+                        android:textSize="@dimen/olympiads_table_text_size"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_height"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+            <ImageButton
+                android:id="@+id/prev_btn"
+                android:layout_width="@dimen/footer_btn_size"
+                android:layout_height="@dimen/footer_btn_size"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/prev_btn" />
+            <ImageButton
+                android:id="@+id/next_btn"
+                android:layout_width="@dimen/footer_btn_size"
+                android:layout_height="@dimen/footer_btn_size"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/next_btn" />
+            <ImageButton
+                android:id="@+id/delete_btn"
+                android:layout_width="@dimen/footer_btn_size"
+                android:layout_height="@dimen/footer_btn_size"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/delete_btn" />
+            <ImageButton
+                android:id="@+id/add_btn"
+                android:layout_width="@dimen/footer_btn_size"
+                android:layout_height="@dimen/footer_btn_size"
+                android:background="@drawable/add_btn"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

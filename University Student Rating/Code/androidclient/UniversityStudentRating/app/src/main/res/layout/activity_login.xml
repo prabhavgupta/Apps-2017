@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGray">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.arturrinkis.universitystudentrating.SignUpActivity">
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/login">
+        </ImageView>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@color/lightGreen"
+            android:textColor="@color/white"
+            android:text="Login in to your account">
+        </TextView>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_round_back"
+            android:layout_margin="20dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/error_messages_tv"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textColor="@color/colorAccent"
+                android:text="* Error messages"
+                android:visibility="gone">
+            </TextView>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary"
+                android:text="User name">
+            </TextView>
+            <EditText
+                android:id="@+id/username_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary">
+            </EditText>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary"
+                android:text="Password">
+            </TextView>
+            <EditText
+                android:id="@+id/password_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary">
+            </EditText>
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/lightBlue"
+                android:textColor="@color/white"
+                android:text="LOGIN">
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
