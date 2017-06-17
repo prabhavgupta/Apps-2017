@@ -11,6 +11,8 @@ The application involves the separation of ratings on items and separation of it
 3. Sport – physical culture and sport. 
 4. Society – psychology, history, social studies.
 
+Demo: [![University Student Rating](https://github.com/IEEEmadC/Apps-2017/blob/master/video.png)](https://youtu.be/ZTjHoJS_RoA)
+
 ### The rating also divided into types: 
 1. Classwork – evaluation for laboratory and course works. The assessment will be billed in accordance with the points system in the school (a 10-point system).
 2. The Olympics and the scientific and other achievements the assessment of achievements in extra-curricular activities, competitions and other achievements the assessment of which does not fall into the framework of score-rating system. 
