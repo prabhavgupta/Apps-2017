@@ -19,7 +19,7 @@ Please make necessary changes and add the edited lne just below the table....
 | App | Team Name | Short Description | Licence | Country | Author |
 |--------|--------|--------|--------|--------|--------|
 |  [Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/mierzenieOpenCV-release.apk) | [Carbon-Base](https://github.com/IEEEmadC/Apps-2017/tree/master/Carbon_Base) | Amazing application for real object measuring! | NA | Poland | Jakub Węgielewski |
-|  [University Student Rating](https://github.com/IEEEmadC/Apps-2017/blob/master/University%20Student%20Rating/Code/androidclient/app-debug.apk) | [USR](https://github.com/IEEEmadC/Apps-2017/tree/master/University%20Student%20Rating) | The development application is for students and teaching staff of Universities. |   | Latvia | Artur Rinkis 
+|  [University Student Rating](https://github.com/IEEEmadC/Apps-2017/blob/master/University%20Student%20Rating/Code/androidclient/app-debug.apk) | [USR](https://github.com/IEEEmadC/Apps-2017/tree/master/University%20Student%20Rating) | The development application is for students and teaching staff of Universities. | MIT | Latvia | Artur Rinkis 
 
 
 Contact at IEEEmadC@ieee.org with your team name if you face any issues.
