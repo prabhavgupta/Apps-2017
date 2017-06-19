@@ -1,5 +1,6 @@
 # Apps-2017
 These apps are built by students for IEEEmadC 2017 submission http://ieeemadc.org/app-submission/
+Deadline 15th July 2017
 
 ## Submit via Github :
 [Open an issue](https://github.com/IEEEmadC/Apps-2017/issues/new) 
