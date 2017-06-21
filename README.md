@@ -3,8 +3,9 @@ These apps are built by students for IEEEmadC 2017 submission http://ieeemadc.or
 Deadline 15th July 2017
 
 ## Submit via Github :
-[Open an issue](https://github.com/IEEEmadC/Apps-2017/issues/new) 
+[Click here to submit](https://github.com/IEEEmadC/Apps-2017/issues/new) 
    * Share team name and your repository link 
+Stage 1 completed.
 
 ## Apps Submitted 
 <!-- DO NOT REMOVE THIS
@@ -34,4 +35,4 @@ For submission kindly include following in the repository:
 
 * UPLOAD CODE AND APP. [Include a Licence.](https://choosealicense.com/)
 
-* Follow the example http://ieeemadc.org/app-submission/
+* Complete Stage 2 on webiste Follow the example http://ieeemadc.org/app-submission/
