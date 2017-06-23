@@ -1,9 +1,11 @@
 # Apps-2017
 These apps are built by students for IEEEmadC 2017 submission http://ieeemadc.org/app-submission/
+Deadline 15th July 2017
 
 ## Submit via Github :
-[Open an issue](https://github.com/IEEEmadC/Apps-2017/issues/new) 
-   * Share team name and repository link 
+[Click here to submit](https://github.com/IEEEmadC/Apps-2017/issues/new) 
+   * Share team name and your repository link 
+Stage 1 completed.
 
 ## Apps Submitted 
 <!-- DO NOT REMOVE THIS
@@ -19,7 +21,7 @@ Please make necessary changes and add the edited lne just below the table....
 | App | Team Name | Short Description | Licence | Country | Author |
 |--------|--------|--------|--------|--------|--------|
 |  [Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/mierzenieOpenCV-release.apk) | [Carbon-Base](https://github.com/IEEEmadC/Apps-2017/tree/master/Carbon_Base) | Amazing application for real object measuring! | NA | Poland | Jakub Węgielewski |
-|  [University Student Rating](https://github.com/IEEEmadC/Apps-2017/blob/master/University Student Rating/.apk) | [USR](https://github.com/IEEEmadC/Apps-2017/tree/master/University Student Rating) | The development application is for students and teaching staff of Universities. |   | Latvia | Artur Rinkis 
+|  [University Student Rating](https://github.com/IEEEmadC/Apps-2017/blob/master/University%20Student%20Rating/Code/androidclient/app-debug.apk) | [USR](https://github.com/IEEEmadC/Apps-2017/tree/master/University%20Student%20Rating) | The development application is for students and teaching staff of Universities. | MIT | Latvia | Artur Rinkis 
 
 
 Contact at IEEEmadC@ieee.org with your team name if you face any issues.
@@ -31,6 +33,6 @@ For submission kindly include following in the repository:
 
 * DESCRIPTION UPTO 4000 CHARACTERS SHOULD INCLUDE PROMO VIDEO 2MIN YOUTUBE/VIMEO EMBED LINK - ONLY TXT AND VIDEO LINK
 
-* UPLOAD CODE AND APP. Include a Licence.
+* UPLOAD CODE AND APP. [Include a Licence.](https://choosealicense.com/)
 
-* Follow the example http://ieeemadc.org/app-submission/
+* Complete Stage 2 on webiste Follow the example http://ieeemadc.org/app-submission/
