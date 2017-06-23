@@ -1,0 +1,169 @@
+
+Mar 20, 2015 15:15:52.91 NEW SESSION
+Mar 20, 2015 15:15:52.91 1426844752791	addons.xpi	WARN	Ignoring missing add-on in C:\Users\technowings-pc\AppData\Roaming\Mozilla\Firefox\Profiles\v5vfp3du.default\extensions\quick_start@gmail.com
+Mar 20, 2015 15:15:52.91 1426844752793	addons.xpi	WARN	Ignoring missing add-on in C:\Users\technowings-pc\AppData\Roaming\Mozilla\Firefox\Profiles\v5vfp3du.default\extensions\faststartff@gmail.com
+Mar 20, 2015 15:15:52.91 1426844752794	addons.xpi	WARN	Ignoring missing add-on in C:\Users\technowings-pc\AppData\Roaming\Mozilla\Firefox\Profiles\v5vfp3du.default\extensions\shortcutff@gmail.com
+Mar 20, 2015 15:15:53.90 console.error: compare-hatke: 
+Mar 20, 2015 15:15:53.90   DEPRECATED: The widget module is deprecated.  Please consider using the sdk/ui module instead.
+Mar 20, 2015 15:15:53.90 Traceback (most recent call last):
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/Promise-backend.js", line 870, in Handler.prototype.process
+Mar 20, 2015 15:15:53.90     nextValue = this.onResolve.call(undefined, nextValue);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/sdk/addon/runner.js", line 86, in startup/</<
+Mar 20, 2015 15:15:53.90     run(options);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/sdk/addon/runner.js", line 145, in run
+Mar 20, 2015 15:15:53.90     let program = main(options.loader, options.main);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/toolkit/loader.js", line 684, in main
+Mar 20, 2015 15:15:53.90     return loader.load(loader, module).exports;
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/sdk/loader/cuddlefish.js", line 129, in CuddlefishLoader/options<.load
+Mar 20, 2015 15:15:53.90     result = load(loader, module);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/toolkit/loader.js", line 318, in load
+Mar 20, 2015 15:15:53.90     evaluate(sandbox, module.uri);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/toolkit/loader.js", line 267, in evaluate
+Mar 20, 2015 15:15:53.90     : loadSubScript(uri, sandbox, encoding);
+Mar 20, 2015 15:15:53.90   File "resource://jid1-9etkkdbarv7iww-at-jetpack/compare-hatke/lib/main.js", line 4, in null
+Mar 20, 2015 15:15:53.90     var widgets = require("sdk/widget");
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/toolkit/loader.js", line 591, in require
+Mar 20, 2015 15:15:53.90     freeze(load(loader, module));
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/sdk/loader/cuddlefish.js", line 129, in CuddlefishLoader/options<.load
+Mar 20, 2015 15:15:53.90     result = load(loader, module);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/toolkit/loader.js", line 318, in load
+Mar 20, 2015 15:15:53.90     evaluate(sandbox, module.uri);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/toolkit/loader.js", line 267, in evaluate
+Mar 20, 2015 15:15:53.90     : loadSubScript(uri, sandbox, encoding);
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/sdk/widget.js", line 59, in null
+Mar 20, 2015 15:15:53.90     require("./util/deprecate").deprecateUsage(
+Mar 20, 2015 15:15:53.90   File "resource://gre/modules/commonjs/sdk/util/deprecate.js", line 18, in deprecateUsage
+Mar 20, 2015 15:15:53.90     let stack = get().slice(2);
+Mar 20, 2015 15:15:53.94 console.error: compare-hatke: 
+Mar 20, 2015 15:15:53.94   Message: TypeError: frame.contentDocument is undefined
+Mar 20, 2015 15:15:53.94   Stack:
+Mar 20, 2015 15:15:53.94     _reallyInitFrame@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:151:1
+Mar 20, 2015 15:15:53.94 _initFrame@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:112:7
+Mar 20, 2015 15:15:53.94 Symbiont@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:63:7
+Mar 20, 2015 15:15:53.94 Trait@resource://gre/modules/commonjs/sdk/deprecated/traits.js:114:14
+Mar 20, 2015 15:15:53.94 WC_setContent@resource://gre/modules/commonjs/sdk/widget.js:809:20
+Mar 20, 2015 15:15:53.94 WC_fill@resource://gre/modules/commonjs/sdk/widget.js:770:3
+Mar 20, 2015 15:15:53.94 BW__addItemToWindow@resource://gre/modules/commonjs/sdk/widget.js:622:5
+Mar 20, 2015 15:15:53.94 BW_addItems@resource://gre/modules/commonjs/sdk/widget.js:602:5
+Mar 20, 2015 15:15:53.94 browserManager_addItem/<@resource://gre/modules/commonjs/sdk/widget.js:572:39
+Mar 20, 2015 15:15:53.94 browserManager_addItem@resource://gre/modules/commonjs/sdk/widget.js:572:5
+Mar 20, 2015 15:15:53.94 _initWidget@resource://gre/modules/commonjs/sdk/widget.js:281:5
+Mar 20, 2015 15:15:53.94 Widget@resource://gre/modules/commonjs/sdk/widget.js:376:3
+Mar 20, 2015 15:15:53.94 @resource://jid1-9etkkdbarv7iww-at-jetpack/compare-hatke/lib/main.js:33:1
+Mar 20, 2015 15:15:53.94 CuddlefishLoader/options<.load@resource://gre/modules/commonjs/sdk/loader/cuddlefish.js:129:18
+Mar 20, 2015 15:15:53.94 run@resource://gre/modules/commonjs/sdk/addon/runner.js:145:19
+Mar 20, 2015 15:15:53.94 startup/</<@resource://gre/modules/commonjs/sdk/addon/runner.js:86:7
+Mar 20, 2015 15:15:53.94 Handler.prototype.process@resource://gre/modules/Promise-backend.js:870:23
+Mar 20, 2015 15:15:53.94 this.PromiseWalker.walkerLoop@resource://gre/modules/Promise-backend.js:749:7
+Mar 20, 2015 15:15:53.94 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise-backend.js:691:37
+Mar 20, 2015 15:15:53.94 
+Mar 20, 2015 15:15:53.94 *************************
+Mar 20, 2015 15:15:53.94 A coding exception was thrown in a Promise resolution callback.
+Mar 20, 2015 15:15:53.94 See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+Mar 20, 2015 15:15:53.94 
+Mar 20, 2015 15:15:53.94 Full message: TypeError: frame.contentDocument is undefined
+Mar 20, 2015 15:15:53.94 Full stack: _reallyInitFrame@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:151:1
+Mar 20, 2015 15:15:53.94 _initFrame@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:112:7
+Mar 20, 2015 15:15:53.94 Symbiont@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:63:7
+Mar 20, 2015 15:15:53.94 Trait@resource://gre/modules/commonjs/sdk/deprecated/traits.js:114:14
+Mar 20, 2015 15:15:53.94 WC_setContent@resource://gre/modules/commonjs/sdk/widget.js:809:20
+Mar 20, 2015 15:15:53.94 WC_fill@resource://gre/modules/commonjs/sdk/widget.js:770:3
+Mar 20, 2015 15:15:53.94 BW__addItemToWindow@resource://gre/modules/commonjs/sdk/widget.js:622:5
+Mar 20, 2015 15:15:53.94 BW_addItems@resource://gre/modules/commonjs/sdk/widget.js:602:5
+Mar 20, 2015 15:15:53.94 browserManager_addItem/<@resource://gre/modules/commonjs/sdk/widget.js:572:39
+Mar 20, 2015 15:15:53.94 browserManager_addItem@resource://gre/modules/commonjs/sdk/widget.js:572:5
+Mar 20, 2015 15:15:53.94 _initWidget@resource://gre/modules/commonjs/sdk/widget.js:281:5
+Mar 20, 2015 15:15:53.94 Widget@resource://gre/modules/commonjs/sdk/widget.js:376:3
+Mar 20, 2015 15:15:53.94 @resource://jid1-9etkkdbarv7iww-at-jetpack/compare-hatke/lib/main.js:33:1
+Mar 20, 2015 15:15:53.94 CuddlefishLoader/options<.load@resource://gre/modules/commonjs/sdk/loader/cuddlefish.js:129:18
+Mar 20, 2015 15:15:53.94 run@resource://gre/modules/commonjs/sdk/addon/runner.js:145:19
+Mar 20, 2015 15:15:53.94 startup/</<@resource://gre/modules/commonjs/sdk/addon/runner.js:86:7
+Mar 20, 2015 15:15:53.94 Handler.prototype.process@resource://gre/modules/Promise-backend.js:870:23
+Mar 20, 2015 15:15:53.94 this.PromiseWalker.walkerLoop@resource://gre/modules/Promise-backend.js:749:7
+Mar 20, 2015 15:15:53.94 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise-backend.js:691:37
+Mar 20, 2015 15:15:53.94 
+Mar 20, 2015 15:15:53.94 *************************
+Mar 20, 2015 15:15:53.94 console.error: compare-hatke: 
+Mar 20, 2015 15:15:53.94   Message: TypeError: frame.contentDocument is undefined
+Mar 20, 2015 15:15:53.94   Stack:
+Mar 20, 2015 15:15:53.94     _reallyInitFrame@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:151:1
+Mar 20, 2015 15:15:53.94 _initFrame@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:112:7
+Mar 20, 2015 15:15:53.94 Symbiont@resource://gre/modules/commonjs/sdk/deprecated/symbiont.js:63:7
+Mar 20, 2015 15:15:53.94 Trait@resource://gre/modules/commonjs/sdk/deprecated/traits.js:114:14
+Mar 20, 2015 15:15:53.94 WC_setContent@resource://gre/modules/commonjs/sdk/widget.js:809:20
+Mar 20, 2015 15:15:53.94 WC_fill@resource://gre/modules/commonjs/sdk/widget.js:770:3
+Mar 20, 2015 15:15:53.94 BW__addItemToWindow@resource://gre/modules/commonjs/sdk/widget.js:622:5
+Mar 20, 2015 15:15:53.94 BW_addItems@resource://gre/modules/commonjs/sdk/widget.js:602:5
+Mar 20, 2015 15:15:53.94 browserManager_addItem/<@resource://gre/modules/commonjs/sdk/widget.js:572:39
+Mar 20, 2015 15:15:53.94 browserManager_addItem@resource://gre/modules/commonjs/sdk/widget.js:572:5
+Mar 20, 2015 15:15:53.94 _initWidget@resource://gre/modules/commonjs/sdk/widget.js:281:5
+Mar 20, 2015 15:15:53.94 Widget@resource://gre/modules/commonjs/sdk/widget.js:376:3
+Mar 20, 2015 15:15:53.94 @resource://jid1-9etkkdbarv7iww-at-jetpack/compare-hatke/lib/main.js:33:1
+Mar 20, 2015 15:15:53.94 CuddlefishLoader/options<.load@resource://gre/modules/commonjs/sdk/loader/cuddlefish.js:129:18
+Mar 20, 2015 15:15:53.94 run@resource://gre/modules/commonjs/sdk/addon/runner.js:145:19
+Mar 20, 2015 15:15:53.94 startup/</<@resource://gre/modules/commonjs/sdk/addon/runner.js:86:7
+Mar 20, 2015 15:15:53.94 Handler.prototype.process@resource://gre/modules/Promise-backend.js:870:23
+Mar 20, 2015 15:15:53.94 this.PromiseWalker.walkerLoop@resource://gre/modules/Promise-backend.js:749:7
+Mar 20, 2015 15:15:53.95 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise-backend.js:691:37
+Mar 20, 2015 15:15:53.95 
+
+Mar 02, 2017 15:36:37.33 NEW SESSION
+Mar 02, 2017 15:36:37.33 1488449197286	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+Mar 02, 2017 15:36:37.35 1488449197308	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+Mar 02, 2017 15:36:37.36 1488449197319	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+Mar 02, 2017 15:36:37.36 1488449197332	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+Mar 02, 2017 15:36:37.36 1488449197346	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+Mar 02, 2017 15:36:37.57 1488449197561	addons.update-checker	WARN	Update manifest for diagnostics@mozilla.org did not contain an updates property
+Mar 02, 2017 15:36:37.59 1488449197573	addons.update-checker	WARN	Update manifest for hsts-priming@mozilla.org did not contain an updates property
+Mar 02, 2017 15:36:37.60 1488449197585	addons.update-checker	WARN	Update manifest for disableSHA1rollout@mozilla.org did not contain an updates property
+
+Mar 03, 2017 13:20:54.16 NEW SESSION
+Mar 03, 2017 13:20:54.16 *************************
+Mar 03, 2017 13:20:54.16 A coding exception was thrown in a Promise resolution callback.
+Mar 03, 2017 13:20:54.16 See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+Mar 03, 2017 13:20:54.16 
+Mar 03, 2017 13:20:54.16 Full message: ReferenceError: resolve is not defined
+Mar 03, 2017 13:20:54.16 Full stack: install/<@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///C:/Users/technowings/AppData/Roaming/Mozilla/Firefox/Profiles/rljchuc1.default/features/%7Bf00b2d6e-0f1a-41ab-b342-4b3cc5406b40%7D/tls13-compat-ff51@mozilla.org.xpi!/bootstrap.js:172:15
+Mar 03, 2017 13:20:54.16 Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+Mar 03, 2017 13:20:54.16 this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+Mar 03, 2017 13:20:54.16 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+Mar 03, 2017 13:20:54.16 
+Mar 03, 2017 13:20:54.16 *************************
+Mar 03, 2017 13:22:58.61 TabSources.prototype._fetchSourceMap threw an exception: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+Mar 03, 2017 13:22:58.61 Stack: SourceMapConsumer@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/sourcemap/source-map.js:1281:20
+Mar 03, 2017 13:22:58.61 TabSources.prototype._fetchSourceMap/fetching<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/utils/TabSources.js:469:19
+Mar 03, 2017 13:22:58.61 Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+Mar 03, 2017 13:22:58.61 this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+Mar 03, 2017 13:22:58.61 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+Mar 03, 2017 13:22:58.61 Line: 1281, column: 20
+Mar 03, 2017 13:22:58.61 console.error: 
+Mar 03, 2017 13:22:58.62   TabSources.prototype._fetchSourceMap threw an exception: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+Mar 03, 2017 13:22:58.62 Stack: SourceMapConsumer@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/sourcemap/source-map.js:1281:20
+Mar 03, 2017 13:22:58.62 TabSources.prototype._fetchSourceMap/fetching<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/utils/TabSources.js:469:19
+Mar 03, 2017 13:22:58.62 Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+Mar 03, 2017 13:22:58.62 this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+Mar 03, 2017 13:22:58.62 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+Mar 03, 2017 13:22:58.62 Line: 1281, column: 20
+Mar 03, 2017 15:36:36.90 1488535596873	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+Mar 03, 2017 15:36:36.91 1488535596888	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+Mar 03, 2017 15:36:37.16 1488535597139	addons.update-checker	WARN	Update manifest for diagnostics@mozilla.org did not contain an updates property
+Mar 03, 2017 15:36:37.20 1488535597177	addons.update-checker	WARN	Update manifest for hsts-priming@mozilla.org did not contain an updates property
+Mar 03, 2017 15:36:37.44 1488535597413	addons.update-checker	WARN	Update manifest for disableSHA1rollout@mozilla.org did not contain an updates property
+Mar 03, 2017 15:36:37.48 1488535597455	addons.update-checker	WARN	Update manifest for tls13-compat-ff51@mozilla.org did not contain an updates property
+Mar 03, 2017 15:36:37.72 1488535597693	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+Mar 03, 2017 15:36:37.78 1488535597751	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+Mar 03, 2017 15:36:38.00 1488535597980	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+Mar 03, 2017 18:14:32.73 [Child 620] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Mar 03, 2017 18:14:32.91 [Child 620] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+May 16, 2017 10:27:18.91 NEW SESSION
+May 16, 2017 10:27:18.91 1494910638882	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+May 16, 2017 10:27:18.91 1494910638902	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+May 16, 2017 10:27:18.92 1494910638915	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+May 16, 2017 10:27:18.93 1494910638924	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+May 16, 2017 10:27:18.94 1494910638934	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+May 16, 2017 20:22:34.17 [Child 3416] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+May 16, 2017 20:22:34.19 
+May 16, 2017 20:22:34.19 ###!!! [Child][MessageChannel] Error: (msgtype=0x4400A9,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+May 16, 2017 20:22:34.19 
+May 16, 2017 20:22:34.19 [Child 3416] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346

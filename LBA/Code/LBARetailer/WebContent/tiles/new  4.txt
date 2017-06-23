@@ -1,0 +1,9 @@
+ The following resources are available:
+
+    Traffic Simulation Framework - the simulator used to generate the input data, along with its instruction
+    Street graph used by the simulator
+    Evaluation procedures for preliminary and final tests
+    Training data
+    Test data: split into public part (inputs) and target decisions
+    Example solutions
+    Final solutions of all participants 

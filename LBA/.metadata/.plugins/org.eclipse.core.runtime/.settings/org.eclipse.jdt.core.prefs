@@ -1,0 +1,14 @@
+#Fri Mar 20 18:16:10 IST 2015
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.compiler.compliance=1.6
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=D\:/work/setup/jdk1.6.0_07/jre/lib/rt.jar
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=D\:/work/setup/Eclipse-JEE-Indigo-SR1-win32/eclipse-jee-indigo-SR1-win32/eclipse
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=D\:/work/setup/Eclipse-JEE-Indigo-SR1-win32/eclipse-jee-indigo-SR1-win32/eclipse/plugins/org.junit_3.8.2.v3_8_2_v20100427-1100/
+eclipse.preferences.version=1
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.compiler.source=1.6
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=D\:/work/setup/jdk1.6.0_07/src.zip
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error

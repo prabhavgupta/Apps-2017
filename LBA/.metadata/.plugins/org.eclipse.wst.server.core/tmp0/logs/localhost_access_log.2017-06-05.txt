@@ -1,0 +1,11 @@
+127.0.0.1 - - [05/Jun/2017:14:06:53 -0700] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:14:06:54 -0700] "GET /LBARetailer/WEB-INF/classes/com/constant/ServerConstants.java HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:30:04 -0700] "GET /LBARetailer/WEB-INF/classes/com/constant/ServerConstants.java HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:31:51 -0700] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:31:51 -0700] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:31:51 -0700] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:32:35 -0700] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:32:38 -0700] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:33:03 -0700] "GET /LBARetailer/WEB-INF/classes/com/constant/ServerConstants.java HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:34:20 -0700] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [05/Jun/2017:19:34:21 -0700] "GET /favicon.ico HTTP/1.1" 404 973

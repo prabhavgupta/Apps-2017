@@ -1,0 +1,8 @@
+INDEX VERSION 1.122+C:\work\LBA-Retailer\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2473347479.index
+3153583503.index
+2522749439.index
+135790536.index
+2580027586.index
+12563842.index
+364099855.index

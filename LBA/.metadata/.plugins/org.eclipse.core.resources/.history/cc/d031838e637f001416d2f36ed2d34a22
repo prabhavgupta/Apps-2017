@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<%@page import="com.helper.ReverseGeocoder"%>
+<%@page import="com.helper.StringHelper"%>
+<html lang="en">
+
+<head>
+<jsp:include page="../tiles/include_files.jsp"></jsp:include>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+<%
+String imei= StringHelper.n2s(request.getParameter("imei"));
+String startlocation= StringHelper.n2s(request.getParameter("location"));
+String address="";
+try{
+if(startlocation.length()>0){
+	
+	String[] tokens=ReverseGeocoder.getLocation(startlocation);
+	address=tokens[0];
+}
+}catch(Exception e){
+	
+}
+%>
+
+	<jsp:include page="../tiles/topmenu.jsp"></jsp:include>
+	<!-- Section: contact -->
+	<section id="contact" class="home-section text-center">
+		<div class="heading-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow bounceInDown" data-wow-delay="0.4s">
+							<div class="section-heading">
+								<h2>Registration</h2>
+								<i class="fa fa-2x fa-angle-down"></i>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-5">
+					<hr class="marginbot-50">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="boxed-grey">
+						<form id="contact-form" action="javascript:fnSubmit();">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+									
+										<label for="name">Register As</label> 
+										<input tabindex="10"  type="radio" name="roleid"  value="T"/>&nbsp;&nbsp;Taxi Driver&nbsp;&nbsp;&nbsp;<input type="radio" name="roleid" tabindex="10" value="P"/>&nbsp;&nbsp;Passenger
+
+										
+									</div>
+									<div class="form-group">
+										<label for="name">First Name</label> 
+										<input type="text" class="form-control" style="text-transform: capitalize;" id="name" name="fname" tabindex="1"  placeholder="Enter First name" required="required" />
+									</div>   
+
+
+									<div class="form-group">
+										<label for="email"> Email Address</label>
+										<div class="input-group">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span> </span> 
+											<input type="email" class="form-control" tabindex="3"  name="emailid" id="email" placeholder="Enter email" required="required" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="name">Start Location</label>
+
+										<div class="input-group">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> </span> 
+											<input type="text" class="form-control" tabindex="5"  name="startlocation" id="startlocation" value="<%=address %>" placeholder="Enter Start Location" required="required" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="name">User Name </label> <input type="text"
+											class="form-control" id="username" name="username" tabindex="7"  placeholder="User Name"
+											required="required" />
+									</div>
+
+								
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="name">Last Name</label> <input type="text"
+											class="form-control" name="lname" id="name" tabindex="2"  placeholder="Enter Last name"
+											required="required" />
+									</div>
+									<div class="form-group">
+										<label for="name">Phone No</label> <input type="text"
+											class="form-control" name="phoneno" tabindex="4"  id="phone" placeholder="Enter Phone No"
+											required="required" />
+									</div>
+									<div class="form-group">
+										<label for="name">IMEI </label> <input type="text"
+											class="form-control" name="imei" id="imei" tabindex="6" value="<%=imei %>"  placeholder="IMEI No"
+											required="required" />
+									</div>
+									<div class="form-group">
+										<label for="name">Password</label> <input type="password"
+											class="form-control" id="userpass" tabindex="8" 
+											placeholder="Enter Password" name="userpass" required="required" />
+									</div>
+									<div class="form-group">
+										<label for="name">Confirm Password</label> <input
+											type="password" class="form-control" name="cuserpass"  tabindex="9"  id="cuserpass"
+											placeholder="Enter Confirm Password" required="required" />
+									</div>
+								</div>
+								<div class="col-md-12">
+								&nbsp;&nbsp;
+										<button type="reset" id="ResetBtnId"
+										class="btn btn-skin pull-right" >Reset</button>&nbsp;&nbsp;
+									<button type="submit" id="RegisterMeBtn"
+										class="btn btn-skin pull-right"   tabindex="11"  >Register
+										Me2!</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</section>
+	<!-- /Section: contact -->
+
+
+</body>
+<script>
+function fnSubmit(){
+	
+	if($('#userpass').val()!=$('#cuserpass').val()){
+		alert('Password and confirm password do not match!');
+		return;
+	}
+	
+	 var str = $( "#contact-form" ).serialize();
+	$.post("<%=request.getContextPath()%>/tiles/ajax.jsp?methodId=registerNewUser",
+			str,
+			function(data) {
+data=$.trim(data);  
+alert(data);
+$('#contact-form')[0].reset();
+
+			});
+
+
+}
+</script>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<%@page import="java.util.HashMap"%>
+<%@page import="com.helper.DBUtils"%>
+<%@page import="java.util.List"%>
+<%@page import="com.helper.RequestedTrips"%>
+<%@page import="com.database.ConnectionManager"%>
+<%@page import="java.util.Date"%>
+<%@page import="com.helper.StringHelper"%>
+<html lang="en">
+
+<head>
+
+<%@include file="../tiles/include_files.jsp"%>
+
+<script type="text/javascript"
+	src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+	<%@include file="../tiles/topmenu.jsp"%>
+	<%
+	String taxiDriverId="3";
+if(isLogin){
+	taxiDriverId=um.getUserid();
+}
+%>
+<!--  Modal Window = Start Trip Start-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Taxi  - Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" id="formId">
+<!--           <div class="form-group"> -->
+<!--             <label for="recipient-name" class="control-label">Recipient:</label> -->
+<!--             <input type="text" class="form-control" id="recipient-name"> -->
+<!--           </div> -->
+  <input type="hidden" class="form-control" id="taxiDriverId" name="taxiDriverId" value="<%=taxiDriverId%>">
+  <input type="hidden" class="form-control" id="requestId" name="requestId" value="">
+  
+          <div class="form-group">
+            <label for="message-text" class="control-label">Approximate Time To Reach in Minutes:</label>
+             <input type="text" class="form-control" id="time2Reach" name="time2Reach">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="fnAccept()">Accept Request</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  Modal Window = Start Trip End-->
+
+<!--  Modal Window = Stop Trip Start-->
+<div class="modal fade" id="stopTaxiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Taxi  - Trip End Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" id="tripStartId">
+<!--           <div class="form-group"> -->
+<!--             <label for="recipient-name" class="control-label">Recipient:</label> -->
+<!--             <input type="text" class="form-control" id="recipient-name"> -->
+<!--           </div> -->
+
+    <div class="form-group">
+            <label for="message-text" class="control-label">Fare Charged:</label>
+             <input type="text" class="form-control" id="fareChanged" name="fareChanged">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Approximate Km:</label>
+             <input type="text" class="form-control" id="approxKM" name="approxKM">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="fnStop()">Close Trip</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  Modal Window = Stop Trip End-->
+
+
+	<%
+		String imei = StringHelper.n2s(request.getParameter("imei"));
+		String startlocation = StringHelper.n2s(request   
+				.getParameter("startlocation"));
+	
+		List list = ConnectionManager.applySpatialAnalysis();
+	
+		session.setAttribute("LIST2", list);
+	%>
+
+	<!-- Section: contact -->
+	<section id="contact" class="home-section text-center">
+		<div class="heading-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow bounceInDown" data-wow-delay="0.4s">
+							<div class="section-heading">
+								<h2>Pending Cab Requests</h2>
+								<i class="fa fa-2x fa-angle-down"></i>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<% boolean flag=true;%>
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-5">
+					<hr class="marginbot-50">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-10">
+					<div class="boxed-grey">
+						<form id="contact-form" >
+							<div class="row">
+								<div class="col-md-15" >
+									<display:table class="simple" name="sessionScope.LIST2"
+										requestURI="/pages/requested_cab_list.jsp" id="searchTableIdRequests"
+										pagesize="20" style=" width:100%;" 
+										 export="false" sort="list">
+										<display:setProperty name="export.csv" value="false" />
+										<display:setProperty name="export.xml" value="false" />
+										<display:setProperty name="export.xls" value="false" />
+										<display:setProperty name="paging.banner.placement"
+											value="bottom" />
+
+<%
+				RequestedTrips rt=(RequestedTrips)pageContext.getAttribute("searchTableIdRequests");
+				
+				%>
+										<display:column title="Booking Id" sortable="true" 
+											property="requestId">
+											
+										</display:column>
+										<display:column title="Start Location" sortable="true"
+											property="startLocation">
+										</display:column>
+										<display:column title="End Location" sortable="true"
+											property="endlocation">
+										</display:column>
+										<display:column title="Need On" sortable="true"
+											property="needon">
+										</display:column>
+										<display:column title="Approximate Fare" sortable="true"
+											property="approxFare">
+										</display:column>
+										<display:column title="Approx Nexttrip Fare" sortable="true" >
+		<%=rt.getNextTripFare()%>
+</display:column>
+
+										
+										<display:column sortable="true" title="Accept " media="html">
+										
+										<button type="button" class="btn btn-primary" data-toggle="modal"      
+										data-target="#exampleModal" 
+										onclick="$('#requestId').val('<%=rt.getRequestId()%>');$('#time2Reach').val('<%=rt.getNeedon()%>');">Accept</button>
+
+										</display:column>
+										
+										<%
+										flag=false; %>
+									</display:table>
+    
+								</div>
+	
+							</div>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+	<script>
+	function blinker(){
+		document.getElementById('searchTableIdRequests').rows[1].style.backgroundColor="yellow";
+		document.getElementById('searchTableIdRequests').rows[1].style.color="black";
+		setTimeout("document.getElementById('searchTableIdRequests').rows[1].style.backgroundColor='white'", 500);
+		setTimeout("blinker()",1000);
+	}
+	blinker();
+	
+	</script>
+
+
+			<%
+			
+			String q="SELECT * FROM requestedtrips where taxiDriverId ="+taxiDriverId+" and tripendtime is null";
+			List list2 = ConnectionManager.getBeanList(RequestedTrips.class,
+					q);
+			session.setAttribute("LIST3", list2);
+			q="SELECT 1 FROM requestedtrips where taxiDriverId ="+taxiDriverId+" and tripendtime is null and tripstarttime is not null";
+			boolean isRunningTrip= DBUtils.dataExists(q);
+			session.setAttribute("RUNNING_TRIP", isRunningTrip);
+			%>
+			<h2>Accepted Cab Requests</h2>
+	<div class="row">
+				<div class="col-lg-10">	
+					<div class="boxed-grey">
+						<form id="contact-form" >
+							<div class="row">
+								<div class="col-md-15">
+
+									<display:table class="simple" name="sessionScope.LIST3"
+										requestURI="/pages/requested_cab_list.jsp" id="searchTableId"
+										pagesize="20" style=" width:100%;" defaultsort="1"
+										defaultorder="ascending" export="false" sort="list">
+										<%
+										RequestedTrips rt=((RequestedTrips)pageContext.getAttribute("searchTableId"));
+										String tripStart="";
+										String tripEnd="";
+										
+										if(rt!=null){
+										 tripStart=StringHelper.n2s(rt.getTripstartTime());
+										 tripEnd=StringHelper.n2s(rt.getTripendtime());
+										}
+										%>
+										<display:setProperty name="export.csv" value="false" />
+										<display:setProperty name="export.xml" value="false" />
+										<display:setProperty name="export.xls" value="false" />
+										<display:setProperty name="paging.banner.placement"
+											value="bottom" />
+
+
+										<display:column title="Booking Id" sortable="true" property="requestId">
+										</display:column>
+										<display:column title="Start Location" sortable="true"
+											property="startLocation">
+										</display:column>
+										<display:column title="End Location" sortable="true"
+											property="endlocation">
+										</display:column>
+										<display:column title="Need On" sortable="true"
+											property="needon">
+										</display:column>
+										<display:column sortable="true" title="Accept " media="html">
+											<%if(tripStart.length()>0){ %>
+											   
+											
+											<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#stopTaxiModal" onclick="$('#requestId').val('<%=rt.getRequestId()%>');$('#fareChanged').val('<%=rt.getApproxFare()%>');$('#approxKM').val('<%=rt.getApproxKM()%>');" >Complete Trip</button>&nbsp;
+											<%}else{ %>
+											<button type="button" class="btn btn-primary" id="startTripBtn" onclick="fnStart(<%=((RequestedTrips)pageContext.getAttribute("searchTableId")).getRequestId()%>);">Start Trip</button>
+											<button type="button" class="btn btn-primary" data-toggle="modal" id="completeTripBtn" style="display: none;" data-target="#stopTaxiModal" onclick="$('#requestId').val('<%=rt.getRequestId()%>');$('#fareChanged').val('<%=rt.getApproxFare()%>');$('#approxKM').val('<%=rt.getApproxKM()%>');" >Complete Trip</button>&nbsp;
+											<%} %>
+
+										</display:column>
+										<display:column sortable="true" title="Delete " media="html">
+											<button type="button" class="btn btn-primary"  onclick="javascript:fnDelete(<%=((RequestedTrips)pageContext.getAttribute("searchTableId")).getRequestId()%>);">Delete</button>
+										</display:column>
+
+									</display:table>
+
+								</div>
+
+							</div>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+			
+			
+			
+			
+				<%
+			
+			 q="SELECT * FROM requestedtrips where taxiDriverId ="+taxiDriverId+"  and tripendtime is not null";
+			 list2 = ConnectionManager.getBeanList(RequestedTrips.class,
+					q);
+			session.setAttribute("LIST4", list2);
+			%>
+			<h2>Completed Requests</h2>
+	<div class="row">
+				<div class="col-lg-10">
+					<div class="boxed-grey">
+						<form id="contact-form" >
+							<div class="row">
+								<div class="col-md-15">
+
+									<display:table class="simple" name="sessionScope.LIST4"
+										requestURI="/pages/requested_cab_list.jsp" id="searchTableId"
+										pagesize="20" style=" width:120%;" defaultsort="1"
+										defaultorder="ascending" export="false" sort="list">
+										<%
+										RequestedTrips rt=((RequestedTrips)pageContext.getAttribute("searchTableId"));
+										String tripStart=StringHelper.n2s(rt.getTripstartTime());
+										String tripEnd=StringHelper.n2s(rt.getTripendtime());
+										%>
+										<display:setProperty name="export.csv" value="false" />
+										<display:setProperty name="export.xml" value="false" />
+										<display:setProperty name="export.xls" value="false" />
+										<display:setProperty name="paging.banner.placement"
+											value="bottom" />
+										<display:column title="Booking Id" sortable="true"
+											property="requestId">
+										</display:column>
+										<display:column title="Start Location" sortable="true"
+											property="startLocation">
+										</display:column>
+										<display:column title="End Location" sortable="true"
+											property="endlocation">
+										</display:column>
+										<display:column title="Need On" sortable="true"
+											property="needon">
+										</display:column>
+									</display:table>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- Small modal -->
+
+
+
+		</div>
+	</section>
+	<!-- /Section: contact -->
+
+
+</body>
+<script>
+function fnStart(requestId){
+	
+
+	if(confirm('Are you sure you want to start the trip?')){
+
+	$.post(
+					"<%=request.getContextPath()%>/tiles/ajax.jsp?methodId=startTrip",
+		"requestId="+requestId,
+		function(data) {
+						
+				
+data=$.trim(data);  
+alert(data);
+if(!data.startsWith('You already a trip running.')){
+$('#startTripBtn').hide();
+$('#completeTripBtn').show();
+}
+		});
+	}
+}
+function fnStop(){
+	requestId=$('#requestId').val();
+	if(confirm('Are you sure you want to complete the trip?')){
+		var str = $("#tripStartId").serialize();
+		$.post(
+					"<%=request.getContextPath()%>/tiles/ajax.jsp?methodId=stopTrip",
+					str+"&requestId="+requestId,
+		function(data) {
+						data=$.trim(data);  
+						alert(data);
+		});
+	}
+}
+function fnAccept(){
+
+	var str = $("#formId").serialize();
+	$
+			.post(
+					"<%=request.getContextPath()%>/tiles/ajax.jsp?methodId=acceptRequest",
+		str,
+		function(data) {
+data=$.trim(data);  
+alert(data);
+$('#formId')[0].reset();
+
+		});
+	
+}
+function fnDelete(bookingId){
+if(confirm('Are you sure?')){
+	var str = "requestId="+bookingId;
+	$
+			.post(
+					"<%=request.getContextPath()%>/tiles/ajax.jsp?methodId=rejectRequest",
+		str,
+		function(data) {
+data=$.trim(data);  
+alert(data);
+$('#formId')[0].reset();
+
+		});
+}
+}
+</script>
+</html>

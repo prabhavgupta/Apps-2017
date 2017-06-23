@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<%@page import="java.util.List"%>
+<%@page import="com.helper.RequestedTrips"%>
+<%@page import="com.database.ConnectionManager"%>
+<%@page import="java.util.Date"%>
+<%@page import="com.helper.StringHelper"%>
+<html lang="en">
+
+<head>
+
+<%@include file="../tiles/include_files.jsp"%>
+
+<script type="text/javascript"
+	src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+     Title <BR>
+     
+    </div>
+  </div>
+</div>
+	<%
+		String imei = StringHelper.n2s(request.getParameter("imei"));
+		String startlocation = StringHelper.n2s(request
+				.getParameter("startlocation"));
+		Date d = new Date();
+		int h = d.getHours();
+		String zone = "PM";
+		if (h < 12) {
+			zone = "AM";
+		} else {
+			h = h - 12;
+		}
+		int m = d.getMinutes();
+		String currentTime = h + ":" + m + " " + zone;
+		List list = ConnectionManager.getBeanList(RequestedTrips.class,
+				"SELECT * FROM requestedtrips ");
+		session.setAttribute("LIST2", list);
+	%>
+
+	<jsp:include page="../tiles/topmenu.jsp"></jsp:include>
+	<!-- Section: contact -->
+	<section id="contact" class="home-section text-center">
+		<div class="heading-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="wow bounceInDown" data-wow-delay="0.4s">
+							<div class="section-heading">
+								<h2>Request a Cab</h2>
+								<i class="fa fa-2x fa-angle-down"></i>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-5">
+					<hr class="marginbot-50">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-10">
+					<div class="boxed-grey">
+						<form id="contact-form" action="javascript:fnSubmit();">
+							<div class="row">
+								<div class="col-md-15">
+
+									<display:table class="simple" name="sessionScope.LIST2"
+										requestURI="/pages/requested_cab_list.jsp" id="searchTableId"
+										pagesize="20" style=" width:100%;" defaultsort="1"
+										defaultorder="ascending" export="false" sort="list">
+										<display:setProperty name="export.csv" value="false" />
+										<display:setProperty name="export.xml" value="false" />
+										<display:setProperty name="export.xls" value="false" />
+										<display:setProperty name="paging.banner.placement"
+											value="bottom" />
+
+
+										<display:column title="Booking Id" sortable="true"
+											property="requestId">
+										</display:column>
+										<display:column title="Start Location" sortable="true"
+											property="startLocation">
+										</display:column>
+										<display:column title="End Location" sortable="true"
+											property="endlocation">
+										</display:column>
+										<display:column title="Need On" sortable="true"
+											property="needon">
+										</display:column>
+										<display:column sortable="true" title="Accept " media="html">
+											<a href="#"
+												onclick="fnDeleteDetails('<%=((RequestedTrips) (pageContext
+							.getAttribute("searchTableId"))).getRequestId()%>')">Accept</a>
+										</display:column>
+										<display:column sortable="true" title="Delete " media="html">
+											<a href="#"
+												onclick="fnDeleteDetails('<%=((RequestedTrips) (pageContext
+							.getAttribute("searchTableId"))).getRequestId()%>')">Delete</a>
+										</display:column>
+
+									</display:table>
+
+								</div>
+
+							</div>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+			
+			<!-- Small modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+
+			
+
+		</div>
+		<!-- Small modal -->
+
+
+
+		</div>
+	</section>
+	<!-- /Section: contact -->
+
+
+</body>
+<script>
+	function fnSubmit() {
+
+		if ($('#userpass').val() != $('#cuserpass').val()) {
+			alert('Password and confirm password do not match!');
+			return;
+		}
+
+		var str = $("#contact-form").serialize();
+		$
+				.post(
+						"
+<%=request.getContextPath()%>/tiles/ajax.jsp?methodId=requestCab",
+			str,
+			function(data) {
+data=$.trim(data);  
+alert(data);
+$('#myform')[0].reset();
+
+			});
+
+
+}
+</script>
+</html>

@@ -1,0 +1,27 @@
+#Thu Mar 12 22:53:30 IST 2015
+DLTK_comment_task_tag_italic=true
+variable_bold=false
+DLTK_comment_task_tag_bold=false
+DLTK_keyword_bold=true
+ruby.symbols_bold=false
+variable.instance_underline=false
+variable.class_underline=false
+DLTK_doc_italic=false
+eclipse.preferences.version=1
+const_bold=false
+DLTK_number_bold=false
+DLTK_string.regexp_bold=false
+DLTK_doc.topic_bold=false
+DLTK_keyword_return_bold=true
+DLTK_doc_bold=false
+variable.instance_bold=true
+DLTK_string.eval_bold=false
+DLTK_single_line_comment_italic=true
+DLTK_single_line_comment_bold=false
+variable.pseudo_bold=false
+sourceHoverBackgroundColor.SystemDefault=false
+DLTK_string_bold=false
+variable.global_bold=false
+variable.class_bold=true
+variable.class_strikethrough=false
+variable.instance_strikethrough=false

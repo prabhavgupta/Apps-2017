@@ -1,0 +1,144 @@
+package com.charts;
+
+import classconnect.common.helper.StringHelper;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+
+public class ChartsUtil {
+
+    public ChartPanel showAuditGraph(HashMap process,JLabel label,int width,int height) {
+        FileOutputStream out = null;
+        ChartPanel chartPanel = null;
+        try {
+            ArrayList<String> xAxisValues = new ArrayList<String>();
+            ArrayList<Float> bar1 = new ArrayList<Float>();
+            Set set = process.keySet();
+            int total=0;
+            for (Object key : set) {
+                int value = StringHelper.n2i(process.get(key));
+            total+=value;
+            }
+
+            for (Object key : set) {
+                float value = (float) ((StringHelper.n2f(process.get(key)) / total) * 100);
+                  DecimalFormat df = new DecimalFormat("####0.00");
+                xAxisValues.add(key + "");
+                bar1.add(StringHelper.n2f(df.format(value)));
+            }
+//                out = new FileOutputStream(new File("D:\\newPiee.png"));
+//            PieChart.getPieChart(out, xAxisValues, bar1);
+            try {
+                ChartModel c = new ChartModel();
+                DefaultPieDataset pieDataset = new DefaultPieDataset();
+                for (int i = 0; i < xAxisValues.size(); i++) {
+                    pieDataset.setValue(xAxisValues.get(i), bar1.get(i));
+                }
+                JFreeChart chart = ChartFactory.createPieChart("Audit Statistics", pieDataset, true, true, false);
+                
+             BufferedImage bi= chart.createBufferedImage(width, height);
+             label.setIcon(new ImageIcon(bi));
+                
+
+            } catch (Exception e) {
+                System.out.println("Problem occurred creating chart.");
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(ChartsUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return chartPanel;
+
+    }
+    
+	public static void main(String arg[]) {
+		ArrayList<String> xAxisValues = new ArrayList<String>();
+		xAxisValues.add("Pavan");
+		xAxisValues.add("Rajesh");
+		xAxisValues.add("Shahadeo");
+		xAxisValues.add("Ashok");
+		ArrayList<Integer> bar1 = new ArrayList<Integer>();
+		bar1.add(10);
+		bar1.add(20);
+		bar1.add(15);
+		bar1.add(10);
+		ArrayList<Integer> bar2 = new ArrayList<Integer>();
+		bar2.add(12);
+		bar2.add(18);
+		bar2.add(13);
+		bar2.add(8);
+		ChartModel c = new ChartModel();
+		c.setGraphTitle("Demo Graph");
+		c.setxAxisTitle("Names");
+		c.setyAxisTitle("Demo Values");
+		c.setRow1("1st Value");
+		c.setRow2("2nd Value");
+		c.setGraphColor(Color.white);
+		FileOutputStream out;
+		try {
+			out = new FileOutputStream(new File("D:\\barChartWrite.png"));
+			BarChart.get3DBarChart(out, xAxisValues, bar1, bar2);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			out = new FileOutputStream(new File("D:\\barChartWrite1.png"));
+			BarChart.get3DBarChart(out,  xAxisValues, bar1);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ArrayList<Date> days = new ArrayList<Date>();
+		days.add(new Date(2014, 1, 1,11,54,50 ));
+		days.add(new Date(2014, 1, 1,11,54,40));
+		days.add(new Date(2014, 1, 1,11,54,30));
+		days.add(new Date(2014, 1, 1,11,54,20));
+//		try {
+//			out = new FileOutputStream(new File("D:\\TimeSeriesChart1.png"));
+//			TimeSeriesChart.getTimeSeriesGraph(out,  days, bar1,MyDate.SECOND);
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		try {
+//			out = new FileOutputStream(new File("D:\\TimeSeriesChart2.png"));
+//			TimeSeriesChart.getTimeSeriesGraph(out,  days, days, bar1, bar2,MyDate.SECOND);
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		try {
+			out = new FileOutputStream(new File("D:\\PieChart1.png"));
+			PieChart.getPieChart(out,  xAxisValues, bar1);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			out = new FileOutputStream(new File("D:\\LineChart1.png"));
+			LineChart.getLineChart(out, bar1, bar2);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}
