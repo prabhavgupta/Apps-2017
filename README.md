@@ -22,7 +22,6 @@ Please make necessary changes and add the edited lne just below the table....
 |--------|--------|--------|--------|--------|--------|
 |  [Real Measure](https://github.com/IEEEmadC/Apps-2017/blob/master/Carbon_Base/mierzenieOpenCV-release.apk) | [Carbon-Base](https://github.com/IEEEmadC/Apps-2017/tree/master/Carbon_Base) | Amazing application for real object measuring! | NA | Poland | Jakub Węgielewski |
 |  [University Student Rating](https://github.com/IEEEmadC/Apps-2017/blob/master/University%20Student%20Rating/Code/androidclient/app-debug.apk) | [USR](https://github.com/IEEEmadC/Apps-2017/tree/master/University%20Student%20Rating) | The development application is for students and teaching staff of Universities. | MIT | Latvia | Artur Rinkis |
-
 | [Location Based Advertising](https://github.com/IEEEmadC/Apps-2017/blob/master/LBA/LBAAndroid.apk) | [USR](https://github.com/IEEEmadC/Apps-2017/tree/master/LBA) | Advertising Using Real-Time Location Based Services
  | GNU | India | BSCOER  |
 
