@@ -36,4 +36,4 @@ For submission kindly include following in the repository:
 
 * UPLOAD CODE AND APP. [Include a Licence.](https://choosealicense.com/)
 
-* Complete Stage 2 on webiste Follow the example http://ieeemadc.org/app-submission/
+* Complete Step 2 on webiste Follow the example http://ieeemadc.org/app-submission/
