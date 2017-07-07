@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rlItemSypmtom"
+    android:layout_margin="@dimen/marginForItemNews"
+    android:padding="@dimen/paddingForTextViews">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llSymptomsDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/tvSymptomDate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Symptom's date"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvSymptomTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="e.g. Log number 1."
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llAreaHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSymptomDate"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/tvSymptomAreaText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Area: "
+            />
+        <TextView
+            android:id="@+id/tvSymptomArea"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="e.g. Head"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvSymptomAreaText"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llDescriptionHistory"
+        android:layout_below="@+id/llAreaHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/tvSymptomDescriptionText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Description: "
+            />
+        <TextView
+            android:id="@+id/tvSymptomDescription"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="e.g. Buzzing"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvSymptomDescriptionText"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llIntensityHistory"
+        android:layout_below="@+id/llDescriptionHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/tvSymptomIntensityText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Intensity: "
+            />
+        <TextView
+            android:id="@+id/tvSymptomIntensity"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="e.g. 5"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvSymptomIntensityText"
+            />
+    </LinearLayout>
+    </LinearLayout>
+        <TextView
+            android:id="@+id/txtForColorIntensity"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

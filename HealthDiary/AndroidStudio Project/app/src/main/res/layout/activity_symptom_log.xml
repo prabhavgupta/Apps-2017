@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="12"
+    tools:context="hr.ferit.mdudjak.healthdiary.SymptomLogActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+   <TextView
+       android:id="@+id/txtPainAreaTitle"
+       android:layout_width="@dimen/textViewWidth"
+       android:layout_height="@dimen/textViewHeight"
+       android:gravity="center"
+       android:layout_gravity="center"
+       android:text="Area of pain:              e.g. Head"
+       android:background="@color/colorForLogTitle"
+       />
+
+    <LinearLayout
+        android:layout_width="@dimen/textViewWidth"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+    <ImageButton
+        android:id="@+id/bAddPainArea"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/textViewHeight"
+        android:src="@drawable/ic_button_add"
+        android:background="@color/colorForLogInput"/>
+
+    <TextView
+        android:id="@+id/txtPainAreaLog"
+        android:layout_width="@dimen/textViewWidth"
+        android:layout_height="@dimen/textViewHeight"
+        android:text="Add area"
+        android:gravity="center"
+        android:background="@color/colorForLogInput"
+        />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/txtPainDescriptionTitle"
+        android:layout_width="@dimen/textViewWidth"
+        android:layout_height="@dimen/textViewHeight"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Pain description:   e.g. Acute"
+        android:background="@color/colorForLogTitle"
+        />
+    <LinearLayout
+        android:layout_width="@dimen/textViewWidth"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+    <ImageButton
+        android:id="@+id/bAddPainDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/textViewHeight"
+        android:src="@drawable/ic_button_add"
+        android:background="@color/colorForLogInput"/>
+
+        <TextView
+        android:id="@+id/txtPainDescriptionLog"
+            android:layout_width="@dimen/textViewWidth"
+            android:layout_height="@dimen/textViewHeight"
+            android:text="Add description"
+            android:gravity="center"
+            android:background="@color/colorForLogInput"
+        />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/txtPainIntensityTitle"
+        android:layout_width="@dimen/textViewWidth"
+        android:layout_height="@dimen/textViewHeight"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Pain intensity"
+        android:background="@color/colorForLogTitle"
+        />
+
+ <SeekBar
+     android:id="@+id/seekBar"
+     style="@style/Widget.AppCompat.SeekBar.Discrete"
+     android:layout_width="@dimen/textViewWidth"
+     android:layout_height="@dimen/textViewHeight"
+     android:gravity="center"
+     android:layout_gravity="center"
+     android:max="9"
+     android:progress="4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+    <Button
+        android:id="@+id/bAddSymptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Add Symptom"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/buttonPadding"
+        />
+
+</LinearLayout>

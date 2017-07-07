@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/marginForItemNews"
+   android:id="@+id/rlBodyLog"
+    android:padding="@dimen/paddingForTextViews">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llBodyLogDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/txtBodyLogDate"
+                android:text="12:14\n5.6.2016."
+                android:layout_margin="@dimen/padding"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvBodyLogTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="e.g. Log number 1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/txtBodyLogDate"
+        android:id="@+id/llWeightHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/tvWeightHistoryTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="@string/WeightHistoryTitle"
+            />
+        <TextView
+            android:id="@+id/tvBodyLogWeight"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="e.g. 80"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvWeightHistoryTitle"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llHeartRateHistory"
+        android:layout_below="@+id/llWeightHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/tvHeartRateHistoryTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="@string/HeartRateHistoryTitle"
+            />
+        <TextView
+            android:id="@+id/tvBodyLogHeartRate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="e.g. 80"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvHeartRateHistoryTitle"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBloodSugarHistory"
+        android:layout_below="@+id/llHeartRateHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/tvBloodSugarHistoryTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="@string/BloodSugarHistoryTitle"
+            />
+        <TextView
+            android:id="@+id/tvBodyLogBloodSugar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="e.g. 5.4"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvBloodSugarHistoryTitle"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBodyPressureHistory"
+        android:layout_below="@+id/llBloodSugarHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/tvBodyPressureHistoryTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="@string/BodyPressureHistoryTitle"
+            />
+        <TextView
+            android:id="@+id/tvBodyLogBodyPressure"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="e.g. 120/80"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvBodyPressureHistoryTitle"
+            />
+    </LinearLayout>
+
+        /LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/ivCameraLogImage"
+            android:layout_alignParentRight="true"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

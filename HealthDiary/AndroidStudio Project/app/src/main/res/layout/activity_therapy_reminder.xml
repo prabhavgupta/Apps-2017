@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarReminder"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ListView
+    android:id="@+id/lRemindersHistory"
+    android:layout_width="fill_parent"
+    android:layout_margin="@dimen/padding"
+    android:padding="@dimen/padding"
+    android:layout_height="fill_parent"/>
+
+    <TextView android:id="@+id/txNoReminders"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/sideMarginForLogTextViews"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/redColorforNumber"
+        android:textSize="@dimen/titleSize"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/no_reminders"/>
+</LinearLayout>

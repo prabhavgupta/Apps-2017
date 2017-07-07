@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorForLogTitle">#F2F2F2</color>
+    <color name="colorForLogInput">#D8D8D8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="redColorforNumber">#FF0000</color>
+    <color name="navHeaderBackground">#7CAA2D</color>
+    <color name="CameraItemBackground">#CED8F6</color>
+    <color name="BackgroundForButtonsOnMaps">#CED8F6</color>
+
+    <array name="colors">
+        <item name="intensity1">#F7FE2E</item>
+        <item name="intensity2">#FFFF00</item>
+        <item name="intensity3">#FACC2E</item>
+        <item name="intensity4">#FFBF00</item>
+        <item name="intensity5">#FE9A2E</item>
+        <item name="intensity6">#FF8000</item>
+        <item name="intensity7">#FE642E</item>
+        <item name="intensity8">#FF4000</item>
+        <item name="intensity9">#FE2E2E</item>
+        <item name="intensity10">#FF0000</item>
+    </array>
+
+    <array name="backgrounds">
+        <item name="intensity1">#F2F2F2</item>
+        <item name="intensity2">#CED8F6</item>
+    </array>
+
+    <array name="remainder_backgrounds">
+        <item name="intensity1">#F2F2F2</item>
+        <item name="intensity2">#CED8F6</item>
+    </array>
+
+</resources>

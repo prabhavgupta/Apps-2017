@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="@dimen/padding"
+android:layout_margin="@dimen/padding"
+tools:context="hr.ferit.mdudjak.healthdiary.InsertReminder">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titleOfReminder" />
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="e.g. Take medications"
+        android:gravity="left"
+        />
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/body" />
+
+    <EditText
+        android:id="@+id/body"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:lines="5"
+        android:hint="One omega 3\nOne Aspirin"
+        android:gravity="top"
+        />
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dateofReminder" />
+    <Button
+        android:id="@+id/reminder_date"
+        android:layout_height="wrap_content"
+        android:text="@string/insertDate"
+        android:layout_width="fill_parent"
+        />
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/timeOfReminder" />
+    <Button
+        android:id="@+id/reminder_time"
+        android:layout_height="wrap_content"
+        android:text="@string/insertTime"
+        android:layout_width="fill_parent"
+        />
+   <LinearLayout
+       android:layout_margin="@dimen/padding"
+       android:layout_width="match_parent"
+       android:padding="@dimen/padding"
+       android:weightSum="6"
+       android:orientation="horizontal"
+       android:layout_height="wrap_content">
+       <TextView
+           android:layout_width="0dp"
+           android:layout_weight="2"
+           android:layout_height="wrap_content"
+           android:text="@string/setRepeatingText"
+           />
+       <EditText
+           android:id="@+id/etRepeatingTime"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:inputType="number"
+           android:hint="0"
+           android:textAlignment="center"
+           android:layout_height="wrap_content" />
+       <Spinner
+           android:id="@+id/repeatingSpinner"
+           android:layout_width="0dp"
+           android:layout_weight="3"
+           android:layout_gravity="center"
+           android:entries="@array/repeating_array"
+           android:layout_height="wrap_content">
+       </Spinner>
+
+   </LinearLayout>
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/confirmReminder"
+        android:textSize="16sp"
+        />
+</LinearLayout>
+</ScrollView>

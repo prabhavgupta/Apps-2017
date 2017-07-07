@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="hr.ferit.mdudjak.healthdiary.BodyStatistics">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:background="@color/colorPrimary"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/bSymptomStatistics"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorForLogInput"
+            android:text="@string/buttonSymptomStatisticsText"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bBodyStatistics"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorForLogInput"
+            android:text="@string/buttonBodyStatisticsText"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/UserActivityBarChartTitle"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/topMarginForLogTextViews"
+        android:textAlignment="center"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <com.github.mikephil.charting.charts.BarChart
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:padding="@dimen/padding"
+        android:layout_margin="@dimen/padding"
+        android:id="@+id/bargraph"></com.github.mikephil.charting.charts.BarChart>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:background="@color/colorPrimary"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/bDescriptionPerArea"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorForLogInput"
+            android:text="@string/buttonDescriptionPerAreaText"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bSymptomsIntensityPerDates"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorForLogInput"
+            android:text="@string/buttonSymptomIntensityPerDateText"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
+

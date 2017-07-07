@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">"Health diary "</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="titleOfFirstNavBarChoice">Log symptoms</string>
+    <string name="titleOfSecondNavBarChoice">Body</string>
+    <string name="titleOfThirdNavBarChoice">Statistics</string>
+    <string name="titleOfFourthNavBarChoice">Symptoms history</string>
+    <string name="titleOfFifthNavBarChoice">Body history</string>
+    <string name="titleofFirstNavBarToolsChoice">Health institutions</string>
+    <string name="titleofSecondNavBarToolsChoice">Therapy reminder</string>
+    <string name="titleOfThirdNavBarToolsChoice">Camera log</string>
+    <string name="title_activity_add_pain_area">AddPainArea</string>
+    <string name="title_activity_add_symptom_info">AddSymptomInfo</string>
+    <string name="hintForAreaInput">Input area </string>
+    <string name="txtTitleForAreaMissing">Can\'t find appropriate area?\nAdd your own!</string>
+    <string name="txtTitleForDescriptionMissing">Can\'t find appropriate description?\nAdd your own!</string>
+    <string name="hintForDescriptionInput">Input description</string>
+    <string name="hintForAreaSearch">Search area</string>
+    <string name="hintForDescriptionSearch">Search description</string>
+    <string name="AddWeightTitle">Weight (kg)</string>
+    <string name="AddWeightHint">Add weight</string>
+    <string name="AddHeartRateTitle">Heart rate (rpm)</string>
+    <string name="AddHeartRateHint">Add heart rate</string>
+    <string name="AddBloodSugarTitle">Blood sugar (mmol/L)</string>
+    <string name="AddBloodSugarTitleHint">Add blood sugar</string>
+    <string name="AddBodyPressureTitle">Body pressure (mm/Hg)</string>
+    <string name="AddBodyPressureHint">Add body pressure</string>
+    <string name="bAddBodyLogText">Submit</string>
+    <string name="AddUpperBodyPressureHint">Add upper pressure</string>
+    <string name="AddLowerBodyPressureHint">Add lower pressure</string>
+    <string name="WeightHistoryTitle">Weight:</string>
+    <string name="HeartRateHistoryTitle">Heart rate:</string>
+    <string name="BloodSugarHistoryTitle">Blood sugar:</string>
+    <string name="BodyPressureHistoryTitle">Body pressure:</string>
+    <string name="SymptomLogDialogMessage">Symptom log is added to history of your symptom logs. Do you want to check it in a log history?</string>
+    <string name="SymptomLogToSaveDialogMessage">Do you want to add your symptom information?</string>
+    <string name="BodyLogToSaveDialogMessage">Do you want add your body information?</string>
+    <string name="BodyLogDialogMessage">Body log is added to history of your body variables logs. Do you want to check it in a log history?</string>
+    <string name="AreaLogDialogMessage">Do you want to add selected area to your symptom info?</string>
+    <string name="DescriptionLogDialogMessage">Do you want to add selected description to your symptom info?</string>
+    <string name="AddCameraLog">Add camera log</string>
+    <string name="noConnectivityWarning">No Internet Connection Available.\n\nPlease connect to working internet connection.</string>
+    <string name="connectionTimeoutMessage">[Connection timed out]\nWe are sorry, but your status feed could not be retrieved.</string>
+    <string name="connectionTimeoutMessageForTips">We are sorry, but your daily tips could not be retrieved.</string>
+    <string name="welcomeTitle">Welcome!\n</string>
+    <string name="welcomeLayoutText">Symptom logs today</string>
+    <string name="title_activity_health_institutions">Map</string>
+    <string name="LocationRequestDenied">Your location can not be retrieved.</string>
+    <string name="title_activity_therapy_reminder">Health diary</string>
+    <string name="menu_insert">Add reminder</string>
+    <string name="no_reminders">There are no reminders currently set.</string>
+    <string name="titleOfReminder">Title of task</string>
+    <string name="body">Description of task</string>
+    <string name="dateofReminder">Date</string>
+    <string name="timeOfReminder">Time</string>
+    <string name="confirmReminder">Confirm</string>
+    <string name="task_saved_message">Reminder is saved.</string>
+    <string name="notify_new_task_message">You have a task that needs to be reviewed.</string>
+    <string name="insertDate">Choose date</string>
+    <string name="insertTime">Choose time</string>
+    <string name="setRepeatingText">Repeat every:</string>
+    <string name="repeatingTitle">Repeating every:</string>
+    <string name="bAddBodyCameraLogText">Camera Log</string>
+    <string name="CameraLogDoneMessage">Your image is saved.</string>
+    <string name="buttonSymptomStatisticsText">SYMPTOMS</string>
+    <string name="buttonBodyStatisticsText">BODY</string>
+    <string name="UserActivityBarChartTitle">Your activity of logging symptoms</string>
+    <string name="buttonDescriptionPerAreaText">Description per Area</string>
+    <string name="buttonSymptomIntensityPerDateText">Symptom Through Time</string>
+    <string name="app_description">Best app for tracking your health!</string>
+    <string-array name="repeating_array">
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+    </string-array>
+</resources>
