@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/rendercontrol">
+        <file>tarde.png</file>
+        <file>palabra.png</file>
+        <file>Movin.qml</file>
+        <file>main.qml</file>
+        <file>Part.qml</file>
+        <file>Score.qml</file>
+        <file>Distance.qml</file>
+        <file>StartCoin.qml</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
