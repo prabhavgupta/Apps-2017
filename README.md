@@ -1,6 +1,7 @@
 # Apps-2017
 These apps are built by students for IEEEmadC 2017 
 Deadline 15th July 2017
+Note: If the apk file size above 100MB share the Google Drive link insted of repository link.
 
 ## Submit via Github :
 [Click here to submit](https://github.com/IEEEmadC/Apps-2017/issues/new) 
