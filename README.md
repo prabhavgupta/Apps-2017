@@ -27,7 +27,7 @@ Please make necessary changes and add the edited lne just below the table....
 | [Location Based Advertising](https://github.com/IEEEmadC/Apps-2017/blob/master/LBA/LBAAndroid.apk) | [LBS](https://github.com/IEEEmadC/Apps-2017/tree/master/LBA) | Advertising Using Real-Time Location Based Services | BSD | India | Jyoti Thorat, Neha Wankhade  |
 | [FightCrimes](https://github.com/IEEEmadC/Apps-2017/blob/master/FightCrimes/App/FightCrimes.apk) | [Binary](https://github.com/Nishargo/FightCrimes) | An app for fighting crimes. Store information and post them. | MIT | Bangladesh | [Nishargo Nigar](https://github.com/Nishargo), Alaa Noor |
 | [RunToCoins](https://play.google.com/store/apps/details?id=com.totos.run.to.coins&hl=es) | [Toto's](https://github.com/javiermr/runtocoins) | Interactive public places through Augmented Reality in outdoor environments. | BSD | Mexico | Alberto & [Javier](https://github.com/javiermr) Maldonado Romo |
-| [HealthDiary]() | [this.mTeamName](https://github.com/MarioDudjak/HealthDiary) | The application solves the problem of maintaining records of health information during a certain time. | MIT | Osijek |  [Mario Dudjak](https://github.com/MarioDudjak) |
+| [HealthDiary](https://github.com/IEEEmadC/Apps-2017/blob/master/HealthDiary/App-release.apk) | [this.mTeamName](https://github.com/MarioDudjak/HealthDiary) | The application solves the problem of maintaining records of health information during a certain time. | MIT | Osijek |  [Mario Dudjak](https://github.com/MarioDudjak) |
 | [Surprise World Cards](https://github.com/IEEEmadC/AppData/blob/master/SurpriseWorldCards.apk) | [Davinci's Dream Team](https://github.com/IEEEmadC/AppData) | This app seeks to promote learning about the world that the little ones are beginning to know.  | MIT | Colombia |  Natalia Ortiz Maldonado, Oscar Alfonso Ochoa Caballero |
 
 
@@ -44,5 +44,5 @@ For submission kindly include following in the repository:
 
 * Complete Stage 2 on webiste Follow the example http://ieeemadc.org/app-submission/
 
-Thank you for participating in IEEEmadC 
-Get your Free Stuudent Education Pack - https://education.github.com/pack 
+#### Thank you for participating in IEEEmadC
+#### Get your Free Stuudent Education Pack - https://education.github.com/pack 
