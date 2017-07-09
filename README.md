@@ -43,3 +43,6 @@ For submission kindly include following in the repository:
 * UPLOAD CODE AND APP. [Include a Licence.](https://choosealicense.com/)
 
 * Complete Stage 2 on webiste Follow the example http://ieeemadc.org/app-submission/
+
+Thank you for participating in IEEEmadC 
+Get your Free Stuudent Education Pack - https://education.github.com/pack 
