@@ -45,5 +45,5 @@ For submission kindly include following in the repository:
 
 * Complete Stage 2 on webiste Follow the example http://ieeemadc.org/app-submission/
 
-#### Thank you for participating in IEEEmadC
-#### Get your Free Stuudent Education Pack - https://education.github.com/pack 
+#### Thank you for participating in IEEEmadC !!
+#### Get your Free Student Education Pack - https://education.github.com/pack 
