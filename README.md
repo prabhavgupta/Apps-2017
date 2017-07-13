@@ -30,6 +30,7 @@ Please make necessary changes and add the edited lne just below the table....
 | [HealthDiary](https://github.com/IEEEmadC/Apps-2017/blob/master/HealthDiary/App-release.apk) | [this.mTeamName](https://github.com/MarioDudjak/HealthDiary) | The application solves the problem of maintaining records of health information during a certain time. | MIT | Osijek |  [Mario Dudjak](https://github.com/MarioDudjak) |
 | [Surprise World Cards](https://github.com/IEEEmadC/AppData/blob/master/SurpriseWorldCards.apk) | [Davinci's Dream Team](https://github.com/IEEEmadC/AppData) | This app seeks to promote learning about the world that the little ones are beginning to know.  | MIT | Colombia |  Natalia Ortiz Maldonado, Oscar Alfonso Ochoa Caballero |
 | [VR4Edu](https://github.com/IEEEmadC/ieeemadc2017-vr4ed) | [vr4ed](https://github.com/IEEEmadC/ieeemadc2017-vr4ed) | There are lot of virtual reality videos. And In VR School category. There are a experimental react-vr app for education  | MIT | Turky |  Muhammet Demirci, Erçetin Kuyucu |
+| [Clean Sea](https://github.com/IEEEmadC/cleansea/blob/master/apk/CleanSea.apk) | [Solis](https://github.com/IEEEmadC/cleansea) | This app aims to educate people about environmental issues, reduce diseases and keep the ocean clean. | MIT | Brazil |  Rafael Solis Melo |
 
 
 Contact at IEEEmadC@ieee.org with your team name if you face any issues.
