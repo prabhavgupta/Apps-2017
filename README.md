@@ -34,7 +34,7 @@ Please make necessary changes and add the edited lne just below the table....
 | [SkyPay](https://github.com/IEEEmadC/sky/tree/master/Distribution%20File) | [SkyBlue](https://github.com/IEEEmadC/sky) | SkyPay will be a secured decentralised banking payment solution that would allow totally anonymous transactions to initiate by adoption of blockchain network. | MIT | India |   Saransh Mittal |
 
 
-
+Get your Free Student Education Pack - https://education.github.com/pack
 Contact at IEEEmadC@ieee.org with your team name if you face any issues.
 
 For submission kindly include following in the repository:
