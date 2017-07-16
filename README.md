@@ -34,6 +34,8 @@ Please make necessary changes and add the edited lne just below the table....
 | [GuideUS](https://github.com/IEEEmadC/GuideUs/blob/master/creator-562cc3dc56a1-1.apk) | [Trinity](https://github.com/IEEEmadC/GuideUs) | This will be a helpful system created for visually impaired people. | MIT | Bangladesh | Nishargo Nigar, Anannya Banerjee, Nasrin Siddiqua |
 | [ColdBox](https://github.com/IEEEmadC/ColdBox/blob/master/ColdBox/ColdBox.apk) | [Hodor](https://github.com/IEEEmadC/ColdBox) | ColdBox is an android application that allows you to book a doorstep appointment to vaccinate your child. | MIT | India | Kanan Vyas, Harsh Patel |
 | [PhotoWrote](https://drive.google.com/open?id=0B3kZepVIgOIxQUN0ajdlcEVFR2M) | [Shadower](https://github.com/IEEEmadC/PhotoWrote_final_VC) | Idea is about to write information on pictures without destroying the original  picture . | MIT | Iran | Amirhossein ranjbar |
+| [ChemAR](https://github.com/IEEEmadC/ChemAR/blob/master/ChemAR.apk) | [ELECTRIFIERZ](https://github.com/IEEEmadC/ChemAR) | Study of chemistry fun and easy by visualizing 3D molecular structures right at your desk with Augmented Reality. | MIT |  Rijo Abraham |
+| []() | []() |  |  |  |
 | []() | []() |  |  |  |
 
 
